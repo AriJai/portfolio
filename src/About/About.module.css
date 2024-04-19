@@ -1,0 +1,51 @@
+.about_container {
+    background: white;
+    min-height: 200px;
+    padding-bottom: 10px;
+}
+
+.title {
+    font-size: 100px;
+    opacity: 50%;
+    font-family: "Josefin Sans";
+    font-weight: lighter;
+}
+
+.me {
+    font-size: 20px;
+    text-align: center;
+}
+
+.expanded {
+    opacity: 0;
+    width: 100%;
+    animation: pop 0.3s ease-in-out forwards;
+}
+
+.expandedremove {
+    opacity: 1;
+    width: 100%;
+    animation: popreverse 0.3s ease-out forwards;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 700px) {
+    .about_container {
+        color: red;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1200px) {
+    .about_container {
+        color: blue;
+    }
+}
+
+@keyframes pop {
+    from {opacity: 0; bottom: -20px;}
+    to {opacity: 1; bottom: 0px;}
+}
+
+@keyframes popreverse {
+    from {opacity: 1; bottom: 0px;}
+    to {opacity: 0; bottom: -20px; display: none;}
+}

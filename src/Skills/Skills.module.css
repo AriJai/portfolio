@@ -1,0 +1,102 @@
+.skills_container {
+    min-height: 400px;
+    background: linear-gradient(to right,turquoise 60%,rgb(108, 236, 108));
+    color: black;
+    position: relative;
+    border-radius: 20px;
+    z-index: 8;
+}
+
+.title {
+    font-size: 100px;
+    opacity: 50%;
+    font-family: "Josefin Sans";
+    font-weight:lighter;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+    perspective: 2000px;
+    perspective-origin: 50%;
+    gap: 20px;
+    color: white;
+}
+
+.frame {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px 40px;
+    font-size: 24px;
+    text-align: center;
+    margin: 5px;
+    transition: all 0.2s linear;
+}
+
+
+
+.box {
+    width: 120px;
+    height: 80px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.2s linear;
+}
+.boxFace {
+    position: absolute;
+}
+.frontSide { transform: rotateY(0deg) translateZ(20px);}
+.backSide { transform: rotateY(180deg) translateZ(20px);}
+.frontSide,.backSide {
+    width: 120px;
+    height: 80px;
+    opacity: 0.6;
+    font-size: 32px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    border: 1px solid black;
+    background: black;
+}
+.leftSide{ transform: rotateY(-90deg) translateZ( 60px ); }
+.rightSide{ transform: rotateY(90deg) translateZ( 60px ); }
+.leftSide, .rightSide {
+    width: 40px;
+    height: 80px;
+    left: 40px;
+    border: 1px solid black;
+    background: turquoise;
+}
+.topSide{ transform: rotateX( 90deg) translateZ(40px); }
+.bottomSide { transform: rotateX( -90deg) translateZ(40px); }
+.topSide, .bottomSide {
+    width: 120px;
+    height: 40px;
+    top: 20px;
+    border: 1px solid black;
+    background: turquoise;
+}
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 700px) {
+    .skills_container {
+        color: red;
+        background: linear-gradient(turquoise 60%,rgb(108, 236, 108));
+    }
+    .skills {
+        color: black;
+    }
+
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1200px) {
+    .skills_container {
+        color: blue;
+    }
+    .skills {
+        color: black;
+    }
+}

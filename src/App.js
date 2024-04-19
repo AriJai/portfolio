@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './/Header/Header';
+import Hero from './/Hero/Hero';
+import Skills from './/Skills/Skills';
+import About from './/About/About';
+import Projects from './/Projects/Projects';
+import Footer from './/Footer/Footer';
 
 function App() {
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0,0);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Hero />     
+      <Skills/>
+      <About/>
+      <Projects/>
+      <Footer/> 
     </div>
   );
 }
