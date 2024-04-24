@@ -12,3 +12,19 @@ h1,h2,h3,h4,h5,h6,li,p,a,ul{
   margin: 0px;
   padding: 0px;
 }
+
+h1,h2,h3,h4,h5,h6 {
+  text-align: end;
+}
+
+.App {
+  background: rgb(216, 218, 217);
+  transition: background 1s;
+  color: black;
+}
+
+.night {
+  background: #05445E;
+  transition: background 1s;
+  color: white;
+}

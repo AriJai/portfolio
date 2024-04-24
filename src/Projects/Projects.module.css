@@ -1,39 +1,32 @@
 .projects_container {
-    background: linear-gradient(gray,black);
     min-height: 800px;
-    padding-bottom: 40px;
 }
 
 .title {
     font-size: 100px;
     opacity: 50%;
-    font-family: "Josefin Sans";
     font-weight: lighter;
+    padding-right: 12px;
 }
 
 .projects_screen {
     display: grid;
-    grid-template: 100% / 70% 30%;
+    grid-template: 100% / 40% 60%;
+    padding: 12px;
 }
-
-.projects_highlights {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
 
 .projects_flex_container {
     display: flex;
     flex-wrap: wrap;
-    border-right: 1px dotted black;
-    justify-content: space-evenly;
+    justify-content: center;
+    height: 500px;
     margin: 20px;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 .projects_grid_container {
     display: grid;
-    border: 1px solid white;
-    padding: 20px;
-    border-radius: 20px;
     margin: 10px;
     cursor: pointer;
     grid-template: auto auto / auto;
@@ -46,7 +39,180 @@
     background: black;
 }
 
-.project_title {
+.project_desc {
+    display: grid;
     grid-area: 2 / 1 / 3 / 2;
+    grid-template: auto auto / auto;
+}
+
+.project_title {
+    grid-area: 1 / 1 / 2 / 2;
     text-align: center;
+}
+
+.projects_highlight {
+    display: grid;
+    grid-area: 1 / 2 / 2 / 3;
+    grid-template: 5% 60% auto / 100%;
+}
+
+.highlight_title {
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: center;
+}
+
+.highlight_screen {
+    grid-area: 2 / 1 / 3 / 2;
+    margin: 0 20px;
+    background: gray;
+}
+
+.project_preview {
+    grid-area: 3 / 1 / 3 / 2;
+    padding: 0 40px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 700px) {
+    .projects_container {
+        color: red;
+        border-radius: 20px;
+        background: #D4F1F4;
+    }
+
+    .title {
+        font-size: 52px;
+        line-height: 52px;
+    }
+
+
+    .projects_screen {
+        grid-template: 60% 40% / 100%;
+        min-height: 600px;
+        padding: unset;
+    }
+
+    .projects_flex_container {
+        margin: unset;
+        height: unset;
+        grid-area: 2 / 1 / 3 / 2;
+        border-top: 1px dotted black;
+    }
+
+    .projects_grid_container {
+        grid-template: 100% / 144px auto;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .project_shell {
+        aspect-ratio: 16 / 9;
+        height: 80px;
+        border-radius: 4px;
+        width: auto;
+    }
+
+    .project_desc {
+        grid-area: unset;
+        display: grid;
+        grid-template: 50% 50% / 100%;
+        justify-items: start;
+    }
+
+    .project_title {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .projects_highlight {
+        grid-area: unset;
+        display: grid;
+        grid-template: auto auto auto / 100%;
+        margin: 10px;
+        border-radius: 20px;
+    }
+
+    .highlight_title {
+        text-align: center;
+        align-self: center;
+    }
+
+    .highlight_screen {
+        margin: unset;
+        grid-area: 2 / 1 / 3 / 2;
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        height: auto;
+        background: gray;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1200px) {
+    .projects_container {
+        color: blue;
+    }
+
+    .title {
+        font-size: 72px;
+    }
+
+    .projects_screen {
+        display: grid;
+        grid-template: auto / 40% 60%;
+    }
+
+    .projects_flex_container {
+        margin: unset;
+        flex-direction: column;
+        overflow-y: unset;
+        height: 600px;
+        flex-wrap: unset;
+    }
+
+    .projects_grid_container {
+        grid-template: auto / 40% 60%;
+        padding: unset;
+        margin: 4px;
+    }
+
+    .project_shell {
+        aspect-ratio: 16 / 9;
+        width: auto;
+        height: 100%;
+    }
+
+    .project_desc {
+        grid-area: 1 / 2 / 2 / 3;
+        display: grid;
+        grid-template: 50% 50% / auto;
+        justify-items: start;
+        align-items: center;
+    }
+
+    .project_title {
+        grid-area: 1 / 1 / 2 / 2;
+        text-indent: 8px;
+    }
+
+    .projects_highlight {
+        grid-area: 1 / 2 / 2 / 3;
+        display: grid;
+        grid-template: 5% 40% 55% / auto;
+        justify-items: start;
+    }
+
+    .highlight_title{
+        justify-self: center;
+    }
+
+    .highlight_screen {
+        grid-area: 2 / 1 / 3 / 2;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        background: gray;
+        justify-self: center;
+    }
+
+    .project_preview {
+        grid-area: 3 / 1 / 4 / 2;
+        padding: 10px;
+    }
 }

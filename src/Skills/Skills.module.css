@@ -1,17 +1,19 @@
 .skills_container {
     min-height: 400px;
-    background: linear-gradient(to right,turquoise 60%,rgb(108, 236, 108));
     color: black;
     position: relative;
+    background: gray;
     border-radius: 20px;
     z-index: 8;
+    margin: 2vh 1vw;
+    background: linear-gradient(to right,turquoise 80%,rgb(108, 236, 108));
 }
 
 .title {
     font-size: 100px;
     opacity: 50%;
-    font-family: "Josefin Sans";
-    font-weight:lighter;
+    font-weight: lighter;
+    padding-right: 12px;
 }
 
 .skills {
@@ -84,10 +86,19 @@
 @media only screen and (min-width: 0px) and (max-width: 700px) {
     .skills_container {
         color: red;
-        background: linear-gradient(turquoise 60%,rgb(108, 236, 108));
+        background: linear-gradient(turquoise 60%,#75E6DA);
+        margin: 5vh 1vw;
+    }
+    .title{
+        font-size: 52px;
     }
     .skills {
         color: black;
+    }
+
+    .frame {
+        padding: 10px 15px;
+        font-size: 20px;
     }
 
 }
@@ -95,6 +106,9 @@
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
     .skills_container {
         color: blue;
+    }
+    .title {
+        font-size: 72px;
     }
     .skills {
         color: black;

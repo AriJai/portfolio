@@ -1,12 +1,18 @@
 .header_main_container {
     position: sticky;
     top: 0px;
+    bottom: 110vh;
     display: grid;
     grid-template: 75px / 0.5fr 1.5fr 3fr 3.5fr 0.5fr;
     align-items: center;
     z-index: 10;
-    
-    background-color: rgba(256,256,256,90%);
+    background: #05445E;
+    color: white;
+}
+
+.night {
+    background: rgb(216, 218, 217);
+    color: black;
 }
 
 
@@ -198,6 +204,26 @@ li:hover::after {
     z-index: 2;
 }
 
+.visibility {
+    grid-area: 1 / 1 / 2 / 2;
+    clip-path: circle();
+    background: white;
+    width: 25px;
+    height: 25px;
+    justify-self: center;
+    transition: background 1s;
+}
+
+.nightVisibility {
+    grid-area: 1 / 1 / 2 / 2;
+    clip-path: circle();
+    background: black;
+    width: 25px;
+    height: 25px;
+    justify-self: center;
+    transition: background 1s;
+}
+
 @media only screen and (min-width: 0px) and (max-width: 700px)  {
     .header_main_container {
         color: red;
@@ -213,6 +239,7 @@ li:hover::after {
         grid-area: 1 / 4 / 2 / 5;
         z-index: 4;
         justify-self: center;
+        border: 1px solid white;
     }
 
     .nav {

@@ -5,20 +5,22 @@ import Skills from './/Skills/Skills';
 import About from './/About/About';
 import Projects from './/Projects/Projects';
 import Footer from './/Footer/Footer';
+import { useSelector } from 'react-redux';
+import { selectToggle } from './Header/HeaderSlice';
 
 function App() {
-
+  const toggle = useSelector(selectToggle);
   window.onbeforeunload = function () {
     window.scrollTo(0,0);
   };
 
   return (
-    <div className="App">
+    <div className={toggle.isVisible ? `App` : `night`}>
       <Header />
-      <Hero />     
+      <Hero />
+      <Projects/>
       <Skills/>
       <About/>
-      <Projects/>
       <Footer/> 
     </div>
   );

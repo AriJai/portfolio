@@ -1,9 +1,19 @@
 .footer_container {
     position: relative;
     height: 100vh;
-    background: linear-gradient(black, darkslategray);
     color: white;
     z-index: 11;
+    background: linear-gradient(#05445E 10%,black);
+    transition: background 1s;
+}
+
+.night {
+    position: relative;
+    height: 100vh;
+    color: white;
+    z-index: 11;
+    background: linear-gradient(black 10% , #05445E);
+    transition: background 1s;
 }
 
 .to_top {
@@ -24,13 +34,15 @@
 }
 
 @media only screen and (min-width: 0px) and (max-width: 700px) {
-    .body_2_container {
+    .footer_container {
         color: red;
+        height: calc(100vh - 75px);
+        z-index: 2;
     }
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
-    .body_2_container {
+    .footer_container {
         color: blue;
     }
 }

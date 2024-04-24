@@ -2,21 +2,27 @@ import React, {useState, useEffect} from 'react';
 import styles from './Header.module.css'
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleH, toggleV } from './HeaderSlice';
-import { selectToggle } from './HeaderSlice';
+import { selectToggle, isDaytime } from './HeaderSlice';
 
 const Header = () => {
-    const [isVisible, setIsVisible] = useState(window.innerWidth < 700);
-    const [isToggle, setIsToggle] = useState(true);
+    const [isToggle, setIsToggle] = useState(false);
     const [isScroll, setIsScroll] = useState(0);
+    const [isVisible, setIsVisible] = useState(isDaytime())
     const dispatch = useDispatch();
     const toggle = useSelector(selectToggle);
+    
+    console.log(toggle)
+    const handleVisibility = (e) => {
+        dispatch(toggleV(!isVisible));
+        setIsVisible(!isVisible);
+    };
 
     const toggleHamburger = (e) => {
+        dispatch( toggleH(!isToggle) );
         setIsToggle(!isToggle);
-        dispatch( toggleH(isToggle) );
         let scroll = window.scrollY;
         setIsScroll(scroll);
-        if ( isToggle ) {
+        if ( !isToggle ) {
             document.body.classList.add('scrollbar-lock');
             document.body.style.overflow = "hidden";
             document.body.style.top = `${scroll * -1}px`;
@@ -34,7 +40,7 @@ const Header = () => {
 
 
     return (
-        <header className={styles.header_main_container} id='header_main_container' >
+        <header className={`${styles.header_main_container} ${toggle.isVisible ? '': styles.night}`} id='header_main_container' >
 
             
             <div className={styles.title}>
@@ -60,6 +66,8 @@ const Header = () => {
                     </ul>
                 </nav>
             </div>
+
+            <div className={`${isVisible ? styles.visibility : styles.nightVisibility}`} onClick={(e) => handleVisibility()}></div>
 
             <div className={`${toggle.isToggle ? styles.main_mobile : ""}`} onClick={(e) => toggleHamburger()}></div>
             
