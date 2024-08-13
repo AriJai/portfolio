@@ -1,6 +1,16 @@
 .about_container {
-    min-height: 200px;
+    min-height: 300px;
     padding-bottom: 10px;
+    scroll-margin-top: 75px;
+    transition: min-height 0.5s ease-in-out;
+}
+
+.stretch {
+    min-height: 500px;
+}
+
+.collapse {
+    min-height: 300px;
 }
 
 .title {
@@ -11,9 +21,11 @@
 }
 
 .me {
+    height: auto;
     font-size: 20px;
     text-align: center;
 }
+
 
 .expanded {
     opacity: 0;

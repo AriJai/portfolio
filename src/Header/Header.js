@@ -3,6 +3,8 @@ import styles from './Header.module.css'
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleH, toggleV } from './HeaderSlice';
 import { selectToggle, isDaytime } from './HeaderSlice';
+import Sun from './Images/Sun.png'
+import Moon from './Images/Moon.png';
 
 const Header = () => {
     const [isToggle, setIsToggle] = useState(false);
@@ -11,11 +13,11 @@ const Header = () => {
     const dispatch = useDispatch();
     const toggle = useSelector(selectToggle);
     
-    console.log(toggle)
     const handleVisibility = (e) => {
         dispatch(toggleV(!isVisible));
         setIsVisible(!isVisible);
     };
+
 
     const toggleHamburger = (e) => {
         dispatch( toggleH(!isToggle) );
@@ -26,6 +28,7 @@ const Header = () => {
             document.body.classList.add('scrollbar-lock');
             document.body.style.overflow = "hidden";
             document.body.style.top = `${scroll * -1}px`;
+            document.querySelector('html').style.scrollBehavior = "auto";
         } else {
             document.body.classList.remove('scrollbar-lock');
             document.body.style.overflow = "hidden scroll";
@@ -34,10 +37,10 @@ const Header = () => {
             document.body.style.right = null;
             document.body.style.bottom = null;
             document.body.style.position = null;
-            window.scrollBy(0, isScroll);
+            window.scrollTo(0, isScroll);
+            document.querySelector('html').style.scrollBehavior = "smooth";
         }
     }
-
 
     return (
         <header className={`${styles.header_main_container} ${toggle.isVisible ? '': styles.night}`} id='header_main_container' >
@@ -60,15 +63,22 @@ const Header = () => {
             <div className={`${styles.nav} ${toggle.isToggle ? styles.nav_mobile : "" }`} id="nav" >
                 <nav id='header'>
                     <ul className={`${styles.nav_ul}`}>
-                        <li className={styles.nav_li_contact}>Skills</li>
-                        <li className={styles.nav_li_about}>About</li>
-                        <li className={styles.nav_li_projects}>Projects</li>
+                        <li className={styles.nav_li_contact}><a href="#projects" onClick={toggle.isToggle ? () => toggleHamburger() : null}>Projects</a></li>
+                        <li className={styles.nav_li_about}><a href="#Skills" onClick={toggle.isToggle ? () => toggleHamburger() : null}>Skills</a></li>
+                        <li className={styles.nav_li_projects}><a href="#About" onClick={toggle.isToggle ? () => toggleHamburger() : null}>About</a></li>
                     </ul>
+
+                    
                 </nav>
             </div>
 
-            <div className={`${isVisible ? styles.visibility : styles.nightVisibility}`} onClick={(e) => handleVisibility()}></div>
-
+            
+            {
+                isVisible ? 
+                <img className={styles.visibility} src={Sun} alt="Dark mode" onClick={(e) => handleVisibility()}/>
+                :
+                <img className={styles.nightVisibility} src={Moon} alt="Dark mode" onClick={(e) => handleVisibility()}/>
+            }
             <div className={`${toggle.isToggle ? styles.main_mobile : ""}`} onClick={(e) => toggleHamburger()}></div>
             
         </header>

@@ -7,6 +7,7 @@
     z-index: 8;
     margin: 2vh 1vw;
     background: linear-gradient(to right,turquoise 80%,rgb(108, 236, 108));
+    scroll-margin-top: 75px;
 }
 
 .title {
@@ -19,7 +20,6 @@
 .skills {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
     justify-content: center;
     perspective: 2000px;
     perspective-origin: 50%;
@@ -33,7 +33,6 @@
     padding: 20px 40px;
     font-size: 24px;
     text-align: center;
-    margin: 5px;
     transition: all 0.2s linear;
 }
 
@@ -45,6 +44,9 @@
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.2s linear;
+
+    --main-bg-color: black;
+    --side-bg-color: turquoise;
 }
 .boxFace {
     position: absolute;
@@ -60,7 +62,7 @@
     vertical-align: middle;
     line-height: 60px;
     border: 1px solid black;
-    background: black;
+    background: var(--main-bg-color);
 }
 .leftSide{ transform: rotateY(-90deg) translateZ( 60px ); }
 .rightSide{ transform: rotateY(90deg) translateZ( 60px ); }
@@ -69,7 +71,7 @@
     height: 80px;
     left: 40px;
     border: 1px solid black;
-    background: turquoise;
+    background: var(--side-bg-color);
 }
 .topSide{ transform: rotateX( 90deg) translateZ(40px); }
 .bottomSide { transform: rotateX( -90deg) translateZ(40px); }
@@ -78,7 +80,7 @@
     height: 40px;
     top: 20px;
     border: 1px solid black;
-    background: turquoise;
+    background: var(--side-bg-color);
 }
 
 

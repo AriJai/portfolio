@@ -9,7 +9,7 @@ const Footer = () => {
         <footer className={`${ toggle.isVisible ? styles.footer_container : styles.night}`}> 
             <h1>Footer :)</h1>
             <p>I'd like to use this section of the web app to put any final thoughts and possibly leave room for the footer.<br></br>
-            I'd like to use this part of the web app for closing thoughts and possible future projects.</p>
+            Thank you to my friends, my family, and my love for supporting me throughout this journey. I have had a blast with what I have accomplished, and look forward to what can be done in the future. Happy coding!</p>
             <button onClick={() => window.scrollTo({top: 0, left:0, behavior:'smooth'})} className={styles.to_top}>Back to top</button>
         </footer>
     )

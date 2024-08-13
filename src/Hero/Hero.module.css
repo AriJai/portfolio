@@ -17,10 +17,11 @@
     grid-template: repeat(9, 1fr) / repeat(16, 1fr);
 
     z-index: 8;
+
 }
 
 .hero_statement {
-    grid-area: 2 / 2 / 5 / 14;
+    grid-area: 2 / 2 / 5 / 16;
     text-align: end;
 }
 
@@ -55,13 +56,16 @@
 
 .photo {
     display: grid;
-    background: black;
+    background-image: url('../../public/images/me_large.jpg');
+    background-size: cover;
+    background-position: center 30%;
     clip-path: circle();
     place-items: center;
     z-index: 1;
+    aspect-ratio: 16/9;
     width: 100%;
     height: 100%;
-    grid-area: 5 / 2 / 10 / 8;
+    grid-area: 5 / 2 / 10 / 9;
     opacity: 0;
     animation: pop 0.5s ease-out 2s forwards;
 }
@@ -112,6 +116,7 @@
     .photo {
         grid-area: 8 / 2 / 15 / 9;
         z-index: 1;
+        background-image: url('../../public/images/me_small.jpg');
     }
 }
 
@@ -145,7 +150,8 @@
     }
 
     .photo {
-        grid-area: 9 / 2 / 17 / 7;
+        grid-area: 9 / 3 / 17 / 8;
+        background-image: url('../../public/images/me_medium_2.jpg');
     }
 }
 

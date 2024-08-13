@@ -1,6 +1,6 @@
 .footer_container {
     position: relative;
-    height: 100vh;
+    height: calc(100vh - 75px);
     color: white;
     z-index: 11;
     background: linear-gradient(#05445E 10%,black);
@@ -9,9 +9,9 @@
 
 .night {
     position: relative;
-    height: 100vh;
+    height: calc(100vh - 75px);
     color: white;
-    z-index: 11;
+    z-index: 2;
     background: linear-gradient(black 10% , #05445E);
     transition: background 1s;
 }

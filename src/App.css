@@ -17,14 +17,27 @@ h1,h2,h3,h4,h5,h6 {
   text-align: end;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   background: rgb(216, 218, 217);
-  transition: background 1s;
+  transition: background 1s, color 0.4s;
   color: black;
 }
 
 .night {
   background: #05445E;
-  transition: background 1s;
+  transition: background 1s, color 0.4s;
   color: white;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+a:visited {
+  color: unset;
 }

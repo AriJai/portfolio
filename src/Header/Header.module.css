@@ -1,13 +1,15 @@
 .header_main_container {
-    position: sticky;
-    top: 0px;
-    bottom: 110vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: grid;
     grid-template: 75px / 0.5fr 1.5fr 3fr 3.5fr 0.5fr;
     align-items: center;
     z-index: 10;
     background: #05445E;
     color: white;
+    transition: top 0.1s;
 }
 
 .night {
@@ -18,6 +20,7 @@
 
 .title {
     display: grid;
+    margin-left: 10px;
     grid-template: 0.05fr 0.95fr 0.95fr 0.05fr / auto;
     grid-area: 1 / 2 / 2 / 3;
     justify-items: start;
@@ -207,21 +210,21 @@ li:hover::after {
 .visibility {
     grid-area: 1 / 1 / 2 / 2;
     clip-path: circle();
-    background: white;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     justify-self: center;
-    transition: background 1s;
+    opacity: 1;
+    transition: opacity 1s linear;
+    animation: fade 1s linear;
 }
 
 .nightVisibility {
     grid-area: 1 / 1 / 2 / 2;
     clip-path: circle();
-    background: black;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     justify-self: center;
-    transition: background 1s;
+    animation: fade 0.5s linear;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 700px)  {
@@ -289,4 +292,10 @@ li:hover::after {
     .nav {
         grid-area: 1 / 3 / 2 / 4;
     }
+}
+
+
+@keyframes fade {
+    from{opacity: 0;}
+    to{opacity: 1;}
 }

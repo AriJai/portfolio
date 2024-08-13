@@ -92,7 +92,7 @@ const Skills = () => {
     
 
     return (
-        <section className={styles.skills_container}> 
+        <section className={styles.skills_container} id="Skills"> 
             <h2 className={styles.title}>Skills</h2>
             <div className={styles.skills}>
                 {skillsBox()}
