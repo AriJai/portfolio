@@ -87,7 +87,6 @@
 
 @media only screen and (min-width: 0px) and (max-width: 700px) {
     .skills_container {
-        color: red;
         background: linear-gradient(turquoise 60%,#75E6DA);
         margin: 5vh 1vw;
     }
@@ -106,9 +105,7 @@
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
-    .skills_container {
-        color: blue;
-    }
+    
     .title {
         font-size: 72px;
     }

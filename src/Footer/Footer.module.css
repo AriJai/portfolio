@@ -35,14 +35,11 @@
 
 @media only screen and (min-width: 0px) and (max-width: 700px) {
     .footer_container {
-        color: red;
         height: calc(100vh - 75px);
         z-index: 2;
     }
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
-    .footer_container {
-        color: blue;
-    }
+    
 }

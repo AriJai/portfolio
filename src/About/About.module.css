@@ -41,7 +41,6 @@
 
 @media only screen and (min-width: 0px) and (max-width: 700px) {
     .about_container {
-        color: red;
         border-radius: 20px;
         margin: 5vw 1vw;
         background: #D4F1F4;
@@ -58,9 +57,7 @@
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
-    .about_container {
-        color: blue;
-    }
+    
     .title {
         font-size: 72px;
     }
