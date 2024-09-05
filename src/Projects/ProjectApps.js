@@ -1,9 +1,15 @@
 import React from "react";
+import rMinimalLogo from './Images/Logo RM.png';
+import rMinimalHightlight from './Images/RM Cover.png'
+
 
 export const ProjectApps = [
     {
-        name: 'App1',
-        desc: "A more in-depth description for the project. This will give a basic idea behind the function of the web app as well as why it was designed in the first place."
+        name: 'Reddit Minimal',
+        img: rMinimalLogo,
+        desc: "A fun project to learning basic REST API calls. Explore Reddit by searching subreddits and reading comments!",
+        highlightImg: rMinimalHightlight,
+        link: 'https://arijai.github.io/reddit-minimal/'
     },
     {
         name: 'App2',

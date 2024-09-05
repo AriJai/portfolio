@@ -1,10 +1,13 @@
 import React, {useState, useEffect}from 'react';
 import styles from './Skills.module.css';
+import { useSelector } from 'react-redux';
+import { selectToggle } from '../Header/HeaderSlice';
 
 const Skills = () => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [movement, setMovement] = useState({mX: 0, mY: 0});
     const [isMove, setIsMove] = useState(false);
+    const toggle = useSelector(selectToggle);
 
     const skills = [`JavaScript`,`CSS`,`React`,`Redux`,`HTML`,`Kotlin`,`SQL`,`JSX`,`Bash`,`Github`,`JSON/API`];
     
@@ -21,6 +24,7 @@ const Skills = () => {
         e.target.style.color = `rgb(${Math.random()*256},${Math.random()*256},${Math.random()*256})`;
         setMovement({ mX: position.x, mY: position.y });
         //e.target.style.transform = `translateZ(200px)`;
+        e.currentTarget.style.transform = `unset`;
         e.currentTarget.style.transform= `rotate3d(0,0,0, 0deg)`;
 
         setIsMove(!isMove);
@@ -28,7 +32,7 @@ const Skills = () => {
 
     const mouseLeave = (e) => {
         e.target.style.color = 'unset';
-        //e.currentTarget.style.transform = `unset`;
+        e.currentTarget.style.transform = `unset`;
         setIsMove(false);
     }
 
@@ -62,21 +66,21 @@ const Skills = () => {
     };
     const frame = (text, key) => {
         return (
-            <p className={styles.frame} onClick={mouseEnter} onMouseLeave={mouseLeave} onMouseMove={mouseSlide} key={`frame_${key}`}>{text}</p>
+            <p className={styles.frame} key={`frame_${key}`}>{text}</p>
         )
     }
 
     const box = (text, key) => {
         return (
             <div className={styles.box}
-                onClick={mouseEnter} onMouseLeave={mouseLeave} onMouseMove={mouseSlide} key={`box_${key}`} 
+                onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} onMouseMove={mouseSlide} key={`box_${key}`} 
             >
-                    <div className={`${styles.boxFace} ${styles.frontSide}`}>{text}</div>
-                    <div className={`${styles.boxFace} ${styles.backSide}`}></div>
-                    <div className={`${styles.boxFace} ${styles.leftSide}`}></div>
-                    <div className={`${styles.boxFace} ${styles.rightSide}`}></div>
-                    <div className={`${styles.boxFace} ${styles.topSide}`}></div>
-                    <div className={`${styles.boxFace} ${styles.bottomSide}`}></div>
+                    <div id = "box" className={`${styles.boxFace} ${styles.frontSide}`}>{text}</div>
+                    <div id = "box" className={`${styles.boxFace} ${styles.backSide}`}></div>
+                    <div id = "box" className={`${styles.boxFace} ${styles.leftSide}`}></div>
+                    <div id = "box" className={`${styles.boxFace} ${styles.rightSide}`}></div>
+                    <div id = "box" className={`${styles.boxFace} ${styles.topSide}`}></div>
+                    <div id = "box" className={`${styles.boxFace} ${styles.bottomSide}`}></div>
             </div>
         )
     };
@@ -92,7 +96,7 @@ const Skills = () => {
     
 
     return (
-        <section className={styles.skills_container} id="Skills"> 
+        <section className={toggle.isVisible ? styles.skills_container : styles.night} id="Skills"> 
             <h2 className={styles.title}>Skills</h2>
             <div className={styles.skills}>
                 {skillsBox()}

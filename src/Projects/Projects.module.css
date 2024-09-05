@@ -1,5 +1,12 @@
 .projects_container {
     scroll-margin-top: 75px;
+    background: linear-gradient(rgb(216, 218, 217), white);
+}
+
+.night {
+    scroll-margin-top: 75px;
+    color: black;
+    background: linear-gradient(rgb(216, 218, 217), white);
 }
 
 .title {
@@ -7,6 +14,7 @@
     opacity: 50%;
     font-weight: lighter;
     padding-right: 12px;
+    margin: 10px 0px;
 }
 
 .projects_screen {
@@ -29,14 +37,15 @@
     display: grid;
     margin: 10px;
     cursor: pointer;
-    grid-template: auto auto / auto;
-    max-height: 240px;
+    grid-template: 300px 40px / 400px;
 }
 
 .project_shell {
     grid-area: 1 / 1 / 2 / 2;
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
+    place-self: center;
+    object-fit: contain;
     background: black;
 }
 
@@ -54,6 +63,8 @@
 
 .projects_highlight {
     display: grid;
+    border: 1px solid gray;
+    cursor: pointer;
     grid-area: 1 / 2 / 2 / 3;
     place-items: center;
     grid-template: auto 5% auto / 100%;
@@ -72,6 +83,7 @@
     width: 50vw;
     aspect-ratio: 16/ 9;
     border: 1px solid black;
+    background: black;
 }
 
 .project_preview {
@@ -82,6 +94,12 @@
 
 @media only screen and (min-width: 0px) and (max-width: 700px) {
     .projects_container {
+        border-radius: 20px;
+        background: #D4F1F4;
+    }
+
+    .night {
+        color: black;
         border-radius: 20px;
         background: #D4F1F4;
     }
@@ -145,63 +163,47 @@
     .highlight_screen {
         margin: unset;
         grid-area: 1 / 1 / 2 / 2;
-        aspect-ratio: 16 / 9;
         width: 95vw;
         height: auto;
-        background: gray;
     }
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
-    .projects_container {
-        height: 700px;
+
+    .projects_screen {
+        height: min(calc(100vh + 72px), 700px);
     }
 
     .title {
         font-size: 72px;
     }
 
-    .projects_screen {
-        grid-template: 100% / 25% 75%;
-        height: 525px;
-    }
-
     .projects_flex_container {
-        flex-wrap: unset;
-        justify-content: unset;
-        height: 500px;
+        height: 100%;
         margin: unset;
-        scrollbar-width: thin;
-        scrollbar-color: black transparent;
         flex-direction: column;
-    }
-    .project_shell {
-        aspect-ratio: 16/9;
-        height: unset;
-        width: unset;
+        flex-wrap: nowrap;
+        justify-content: start;
     }
 
-    .projects_highlight {
-        align-items: start;
-        grid-template: calc(70vw * 9/16) 5% auto / 100%;
-        
-        
+    .projects_grid_container {
+        margin: 10px 0px;
+        min-height: 150px;
+        grid-template: 100% / 75% 25%;
+        place-items: center;
     }
 
-    .highlight_screen {
-        
-        width: 70vw;
-        margin: unset;
-        
-        
+
+    .project_desc {
+        grid-area: 1 / 2 / 2 / 3;
     }
+
+    
 }
 
 @keyframes pop {
-    from { 
-        opacity: 0;
-    }
     to {
+        scale: 1;
         opacity: 1;
     }
 }

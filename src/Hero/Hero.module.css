@@ -2,71 +2,57 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
 
 
-.hero_container {
-    height: 90vh;
-    min-height: 900px;
-    z-index: 8;
-}
-
-.hero_img {
+.hero_section {
     position: relative;
-    display: grid;
-    height: 100%;
-    align-items: center;
-    justify-items: end;
-    grid-template: repeat(9, 1fr) / repeat(16, 1fr);
-
+    margin-top: 75px;
+    height: max(80vh, 800px);
     z-index: 8;
-
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
 }
 
 .hero_statement {
-    grid-area: 2 / 2 / 5 / 16;
-    text-align: end;
+    grid-area: 1 / 2 / 2 / 3;
+    max-width: 100vw;
+    float: right;
+    place-self: center;
+    margin-right: 2vw;
 }
 
 .hero_statement1 {
     line-height: 100px;
-    font-size: 100px;
+    font-size: clamp(32px, 7vw, 100px);
+    text-align: right;
     animation: pop 1s ease-out;
+    transition: text-align 1s;
 }
 
 .hero_statement2 {
     opacity: 0;
     line-height: 40px;
-    font-size: 40px;
+    font-size: clamp(20px, 2.5vw, 40px);
     animation: pop 1s ease-out 0.8s forwards;
 }
 
 .hero_statement3 {
     opacity: 0;
     line-height: 24px;
-    font-size: 24px;
+    font-size: clamp(12px, 2vw, 24px);
     animation: pop 1s ease-out 1.5s forwards;
 }
 
-.cover {
-    grid-area: 4 / 3 / 9 / 9;
-    background: white;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    align-self: end;
-}
-
 .photo {
-    display: grid;
-    background-image: url('../../public/images/me_large.jpg');
-    background-size: cover;
-    background-position: center 30%;
+    background-position: center;
+    background: black;
     clip-path: circle();
     place-items: center;
+    margin: 0 auto;
     z-index: 1;
-    aspect-ratio: 16/9;
-    width: 100%;
-    height: 100%;
-    grid-area: 5 / 2 / 10 / 9;
+    max-width: 95vw;
+    max-height: 95vw;
+    grid-area: 2 / 1 / 3 / 2;
     opacity: 0;
+    scale: 0.9;
     animation: pop 0.5s ease-out 2s forwards;
 }
 
@@ -79,75 +65,62 @@
 }
 
 @media only screen and (min-width: 0px) and (max-width: 700px) {
-    
-    .hero_img {
-        grid-template: repeat(16, 1fr) / repeat(9, 1fr);
-        place-items: center;
-    }
 
-    .hero_statement {
-        grid-area: 2 / 2 / 7 / 9;
+    .hero_statement{
+        grid-area: 1 / 1 / 2 / 3;
+        text-align: center;
     }
 
     .hero_statement1 {
-        font-size: 48px;
         line-height: 48px;
+        text-align: unset;
     }
     
     .hero_statement2 {
-        font-size: 24px;
         line-height: 24px;
         text-wrap: wrap;
+        text-align: unset;
     }
     
     .hero_statement3 {
         top: unset;
-
-        font-size: 16px;
         line-height: 16px;
     }
 
-    span {
-        font-size: unset;
-    }
-
     .photo {
-        grid-area: 8 / 2 / 15 / 9;
+        grid-area: 2 / 1 / 4 / 3;
         z-index: 1;
-        background-image: url('../../public/images/me_small.jpg');
+        max-width: 50vw;
+        max-height: 50vw;
     }
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
 
-    .hero_img {
-        grid-template: repeat(16, 1fr) / repeat(9, 1fr);
-    }
-
-    .hero_statement{
-        grid-area: 2 / 3 / 7 / 9;
+    .hero_section {
+        margin-top: 56px;
     }
 
     .hero_statement1 {
         align-self: end;
-        font-size: 72px;
         line-height: 72px;
     }
     
     .hero_statement2{
-        font-size: 36px;
         line-height: 36px;
     }
 
     .hero_statement3 {
-        font-size: 20px;
         line-height: 20px;
+        text-align: right;
     }
 
     .photo {
-        grid-area: 9 / 3 / 17 / 8;
-        background-image: url('../../public/images/me_medium_2.jpg');
+        grid-area: 2 / 1 / 3 / 3;
+        max-width: 40vw;
+        max-height: 40vw;
     }
+
 }
 
 

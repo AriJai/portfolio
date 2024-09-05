@@ -2,7 +2,22 @@
     min-height: 300px;
     padding-bottom: 10px;
     scroll-margin-top: 75px;
+    background: radial-gradient(white,rgb(216, 218, 217));
     transition: min-height 0.5s ease-in-out;
+}
+
+.night {
+    min-height: 300px;
+    padding-bottom: 10px;
+    scroll-margin-top: 75px;
+    transition: min-height 0.5s ease-in-out;
+
+    scale: 0.8;
+    opacity: 0;
+    
+    animation: popIn linear forwards;
+    animation-timeline: view();
+    animation-range: 0px 30vh;
 }
 
 .stretch {
@@ -46,6 +61,13 @@
         background: #D4F1F4;
     }
 
+    .night {
+        color: black;
+        border-radius: 20px;
+        margin: 5vw 1vw;
+        background: #D4F1F4;
+    }
+
     .title {
         font-size: 52px;
     }
@@ -71,4 +93,12 @@
 @keyframes popreverse {
     from {opacity: 1; bottom: 0px;}
     to {opacity: 0; bottom: -20px; display: none;}
+}
+
+
+@keyframes popIn {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
 }

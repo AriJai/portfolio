@@ -21,6 +21,10 @@ html {
   scroll-behavior: smooth;
 }
 
+p {
+  font-size: clamp(12px, 1.5vw, 24px);
+}
+
 .App {
   background: rgb(216, 218, 217);
   transition: background 1s, color 0.4s;

@@ -12,6 +12,7 @@ const Header = () => {
     const [isVisible, setIsVisible] = useState(isDaytime())
     const dispatch = useDispatch();
     const toggle = useSelector(selectToggle);
+
     
     const handleVisibility = (e) => {
         dispatch(toggleV(!isVisible));
@@ -41,6 +42,9 @@ const Header = () => {
             document.querySelector('html').style.scrollBehavior = "smooth";
         }
     }
+
+
+
 
     return (
         <header className={`${styles.header_main_container} ${toggle.isVisible ? '': styles.night}`} id='header_main_container' >
@@ -75,9 +79,9 @@ const Header = () => {
             
             {
                 isVisible ? 
-                <img className={styles.visibility} src={Sun} alt="Dark mode" onClick={(e) => handleVisibility()}/>
+                <img className={styles.visibility} src={Sun} alt="Dark mode" id = 'vis' onClick={(e) => handleVisibility()}/>
                 :
-                <img className={styles.nightVisibility} src={Moon} alt="Dark mode" onClick={(e) => handleVisibility()}/>
+                <img className={styles.nightVisibility} src={Moon} alt="Dark mode" id = 'vis' onClick={(e) => handleVisibility()}/>
             }
             <div className={`${toggle.isToggle ? styles.main_mobile : ""}`} onClick={(e) => toggleHamburger()}></div>
             

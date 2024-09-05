@@ -2,11 +2,19 @@
     min-height: 400px;
     color: black;
     position: relative;
-    background: gray;
     border-radius: 20px;
     z-index: 8;
     margin: 2vh 1vw;
-    background: linear-gradient(to right,turquoise 80%,rgb(108, 236, 108));
+    scroll-margin-top: 75px;
+}
+
+.night {
+    min-height: 400px;
+    color: white;
+    position: relative;
+    border-radius: 20px;
+    z-index: 8;
+    margin: 2vh 1vw;
     scroll-margin-top: 75px;
 }
 
@@ -25,6 +33,7 @@
     perspective-origin: 50%;
     gap: 20px;
     color: white;
+    margin: 0px 20vw;
 }
 
 .frame {
@@ -47,6 +56,7 @@
 
     --main-bg-color: black;
     --side-bg-color: turquoise;
+
 }
 .boxFace {
     position: absolute;
@@ -90,6 +100,12 @@
         background: linear-gradient(turquoise 60%,#75E6DA);
         margin: 5vh 1vw;
     }
+
+    .night {
+        background: linear-gradient(turquoise 60%,#75E6DA);
+        margin: 5vh 1vw;
+    }
+
     .title{
         font-size: 52px;
     }
@@ -111,5 +127,16 @@
     }
     .skills {
         color: black;
+    }
+
+}
+
+
+
+@keyframes pop {
+    
+    to {
+        scale: 1;
+        opacity: 1;
     }
 }

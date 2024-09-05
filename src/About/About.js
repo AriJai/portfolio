@@ -1,15 +1,18 @@
 import React, {useState, useRef} from 'react';
 import styles from './About.module.css';
+import { useSelector } from 'react-redux';
+import { selectToggle } from '../Header/HeaderSlice';
 
 const About = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const sectionRef = useRef(null);
+    const toggle = useSelector(selectToggle);
     const handleExpand = (e) => {
         setIsExpanded(prevState => !prevState);
     };
 
     return (
-        <section ref={sectionRef} className={`${styles.about_container} ${isExpanded ? styles.stretch : styles.collapse}`} id="About"> 
+        <section ref={sectionRef} className={`${toggle.isVisible ? styles.about_container : styles.night} ${isExpanded ? styles.stretch : styles.collapse}` } id="About"> 
             <h2 className={styles.title}>About</h2>
             <div id = 'me' className={styles.me}>
                 <p>I develop websites and web applications from scratch using JSX, HTML, and CSS.</p>
