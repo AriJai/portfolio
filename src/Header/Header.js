@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css'
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleH, toggleV } from './HeaderSlice';
@@ -13,7 +13,6 @@ const Header = () => {
     const dispatch = useDispatch();
     const toggle = useSelector(selectToggle);
 
-    
     const handleVisibility = (e) => {
         dispatch(toggleV(!isVisible));
         setIsVisible(!isVisible);
@@ -21,11 +20,11 @@ const Header = () => {
 
 
     const toggleHamburger = (e) => {
-        dispatch( toggleH(!isToggle) );
+        dispatch(toggleH(!isToggle));
         setIsToggle(!isToggle);
         let scroll = window.scrollY;
         setIsScroll(scroll);
-        if ( !isToggle ) {
+        if (!isToggle) {
             document.body.classList.add('scrollbar-lock');
             document.body.style.overflow = "hidden";
             document.body.style.top = `${scroll * -1}px`;
@@ -47,16 +46,16 @@ const Header = () => {
 
 
     return (
-        <header className={`${styles.header_main_container} ${toggle.isVisible ? '': styles.night}`} id='header_main_container' >
+        <header className={`${styles.header_main_container} ${toggle.isVisible ? '' : styles.night}`} id='header_main_container' >
 
-            
+
             <div className={styles.title}>
                 <h1 className={styles.namef}>Arian</h1>
                 <h1 className={styles.namel}>Jaihooni</h1>
             </div>
 
 
-            <div className={`${styles.hamburger} ${toggle.isToggle ? styles.active : "" }`} id="ham" onClick={(e) => toggleHamburger()} >
+            <div className={`${styles.hamburger} ${toggle.isToggle ? styles.active : ""}`} id="ham" onClick={(e) => toggleHamburger()} >
                 <div className={styles.line1}></div>
                 <div className={styles.line2}></div>
                 <div className={styles.line3}></div>
@@ -64,7 +63,7 @@ const Header = () => {
 
 
 
-            <div className={`${styles.nav} ${toggle.isToggle ? styles.nav_mobile : "" }`} id="nav" >
+            <div className={`${styles.nav} ${toggle.isToggle ? styles.nav_mobile : ""}`} id="nav" >
                 <nav id='header'>
                     <ul className={`${styles.nav_ul}`}>
                         <li className={styles.nav_li_contact}><a href="#projects" onClick={toggle.isToggle ? () => toggleHamburger() : null}>Projects</a></li>
@@ -72,19 +71,19 @@ const Header = () => {
                         <li className={styles.nav_li_projects}><a href="#About" onClick={toggle.isToggle ? () => toggleHamburger() : null}>About</a></li>
                     </ul>
 
-                    
+
                 </nav>
             </div>
 
-            
+
             {
-                isVisible ? 
-                <img className={styles.visibility} src={Sun} alt="Dark mode" id = 'vis' onClick={(e) => handleVisibility()}/>
-                :
-                <img className={styles.nightVisibility} src={Moon} alt="Dark mode" id = 'vis' onClick={(e) => handleVisibility()}/>
+                isVisible ?
+                    <div onClick={(e) => handleVisibility()} className={styles.wrapper}><img className={styles.visibility} src={Sun} alt="Light mode" id="sun" /></div>
+                    :
+                    <div onClick={(e) => handleVisibility()} className={styles.wrapper}><img className={styles.nightVisibility} src={Moon} alt="Dark mode" id="moon" /></div>
             }
             <div className={`${toggle.isToggle ? styles.main_mobile : ""}`} onClick={(e) => toggleHamburger()}></div>
-            
+
         </header>
     )
 }

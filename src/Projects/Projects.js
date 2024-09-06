@@ -18,7 +18,7 @@ const Projects = () => {
         return (
             <div className={styles.projects_highlight} onClick={() => handleClick(highLight.link)}>
                 <h3 className={styles.highlight_title}>{highLight.name}</h3>
-                <img className={styles.highlight_screen} src={highLight.highlightImg}></img>
+                {highLight.highlightImg ? <img className={styles.highlight_screen} src={highLight.highlightImg}></img> : <div className={styles.highlight_screen}></div>}
                 <p className={styles.project_preview}>{highLight.desc}</p>
             </div>
         )

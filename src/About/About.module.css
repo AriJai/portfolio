@@ -11,13 +11,6 @@
     padding-bottom: 10px;
     scroll-margin-top: 75px;
     transition: min-height 0.5s ease-in-out;
-
-    scale: 0.8;
-    opacity: 0;
-    
-    animation: popIn linear forwards;
-    animation-timeline: view();
-    animation-range: 0px 30vh;
 }
 
 .stretch {

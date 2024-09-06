@@ -66,7 +66,7 @@ const Skills = () => {
     };
     const frame = (text, key) => {
         return (
-            <p className={styles.frame} key={`frame_${key}`}>{text}</p>
+            <p className={toggle.isVisible ? styles.frame : styles.frame_night} key={`frame_${key}`}>{text}</p>
         )
     }
 
