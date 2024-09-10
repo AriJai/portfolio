@@ -78,9 +78,9 @@ const Header = () => {
 
             {
                 isVisible ?
-                    <div onClick={(e) => handleVisibility()} className={styles.wrapper}><img className={styles.visibility} src={Sun} alt="Light mode" id="sun" /></div>
+                    <div onClick={(e) => handleVisibility()} className={styles.wrapper}><img className={styles.visibility} src={Sun} aria-label="Light mode" id="sun" /></div>
                     :
-                    <div onClick={(e) => handleVisibility()} className={styles.wrapper}><img className={styles.nightVisibility} src={Moon} alt="Dark mode" id="moon" /></div>
+                    <div onClick={(e) => handleVisibility()} className={styles.wrapper}><img className={styles.nightVisibility} src={Moon} aria-label="Dark mode" id="moon" /></div>
             }
             <div className={`${toggle.isToggle ? styles.main_mobile : ""}`} onClick={(e) => toggleHamburger()}></div>
 

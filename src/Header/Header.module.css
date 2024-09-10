@@ -3,19 +3,20 @@
     top: 0;
     left: 0;
     width: 100%;
+    font-size: clamp(12px, 2vw, 24px);
     display: grid;
     grid-template: 75px / 0.5fr 1.5fr 3fr 3.5fr 0.5fr;
     align-items: center;
     z-index: 10;
-    overflow: hidden;
-    background: #05445E;
-    color: white;
-    transition: top 0.1s;
+    transition: top 0.1s, color 1s;
+    background: #4169E1;
+    color: #0E1243;
+    
 }
 
 .night {
-    background: rgb(216, 218, 217);
-    color: black;
+    background: #0E1243;
+    color: #4169E1;
 }
 
 
@@ -33,13 +34,13 @@
 .namef {
     grid-area: 1 / 1 / 2 / 2;
     width: fit-content;
-    font-size: 24px;
+    font-size: clamp(20px, 20px, 24px);
 }
 
 .namel {
     grid-area: 2 / 1 / 2 / 2;
     width: fit-content;
-    font-size: 24px;
+    font-size: clamp(20px, 20px, 24px);
 }
 
 .hamburger{
@@ -160,20 +161,21 @@ li::after {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: lightcoral;
+    background-color: #32FFEB;
     opacity: 1;
     transform: scale(0);
     transform-origin: center;
     text-decoration-skip-ink: auto;
-    transition: opacity 0.3s, transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s, height 0.3s;
 }
 
 .nav_li_contact:hover {
-    transform: scale(1.2, 1.1);
+    transform: scale(1.2, 1.2);
 }
 
 li:hover::after {
     transform: scale(1);
+    height: 100%;
 }
 
 
@@ -186,7 +188,7 @@ li:hover::after {
 }
 
 .nav_li_about:hover {
-    transform: scale(1.1, 1);
+    transform: scale(1.2, 1.2);
 }
 
 .nav_li_projects {
@@ -198,7 +200,7 @@ li:hover::after {
 }
 
 .nav_li_projects:hover {
-    transform: scale(1.1, 1);
+    transform: scale(1.2, 1.2);
 }
 
 .main_mobile {
@@ -213,10 +215,12 @@ li:hover::after {
 
 .wrapper {
     grid-area: 1 / 1 / 2 / 2;
-    width: 40px;
-    height: 40px;
     justify-self: center;
     opacity: 1;
+    clip-path: circle();
+    width: 40px;
+    height: 40px;
+    
 }
 
 .wrapper:hover {
@@ -225,7 +229,7 @@ li:hover::after {
 
 .visibility {
     width: 40px;
-    height: 40px;   
+    height: 40px;
     transform-origin: 50% 150%;
     transition: transform 0.3s;
     animation: rotateEnd 0.2s linear forwards;
@@ -253,10 +257,6 @@ li:hover::after {
 @media only screen and (min-width: 0px) and (max-width: 700px)  {
     .header_main_container {
         grid-template: 75px / 0.5fr 2fr 1fr 1fr;
-    }
-
-    .night {
-        color: white;
     }
 
     .title {

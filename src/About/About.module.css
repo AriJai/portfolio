@@ -2,7 +2,6 @@
     min-height: 300px;
     padding-bottom: 10px;
     scroll-margin-top: 75px;
-    background: radial-gradient(white,rgb(216, 218, 217));
     transition: min-height 0.5s ease-in-out;
 }
 
@@ -51,14 +50,11 @@
     .about_container {
         border-radius: 20px;
         margin: 5vw 1vw;
-        background: #D4F1F4;
     }
 
     .night {
-        color: black;
         border-radius: 20px;
         margin: 5vw 1vw;
-        background: #D4F1F4;
     }
 
     .title {

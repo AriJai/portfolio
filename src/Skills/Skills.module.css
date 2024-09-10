@@ -3,18 +3,21 @@
     color: black;
     border-radius: 20px;
     z-index: 8;
-    margin: 2vh 1vw;
+    margin: 10vh 0px;
     scroll-margin-top: 75px;
+    background: #4169E1;
+    transition: background 1s linear;
 }
 
 .night {
     min-height: 400px;
     color: white;
-    position: relative;
     border-radius: 20px;
+    background: #4169E1;
     z-index: 8;
-    margin: 2vh 1vw;
+    margin: 10vh 0px;
     scroll-margin-top: 75px;
+    transition: background 1s linear;
 }
 
 .title {
@@ -31,14 +34,13 @@
     perspective-origin: 50%;
     gap: 20px;
     color: white;
-    margin: 0px 20vw;
+    padding: 0px 30vw 5vh 30vw;
 }
 
 .frame {
     border: 2px solid black;
     border-radius: 20px;
     padding: 20px 32px;
-    font-size: 24px;
     text-align: center;
     transition: all 0.2s linear;
 }
@@ -48,7 +50,6 @@
     color: white;
     border-radius: 20px;
     padding: 20px 32px;
-    font-size: 24px;
     text-align: center;
     transition: all 0.2s linear;
 }
@@ -75,7 +76,7 @@
     width: 120px;
     height: 80px;
     opacity: 0.6;
-    font-size: 32px;
+    font-size: clamp(16px, 1.5vw, 24px);
     text-align: center;
     vertical-align: middle;
     line-height: 60px;
@@ -105,12 +106,10 @@
 
 @media only screen and (min-width: 0px) and (max-width: 700px) {
     .skills_container {
-        background: linear-gradient(turquoise 60%,#75E6DA);
         margin: 5vh 1vw;
     }
 
     .night {
-        background: linear-gradient(turquoise 60%,#75E6DA);
         margin: 5vh 1vw;
     }
 
@@ -119,8 +118,14 @@
     }
     .skills {
         color: black;
+        padding: 1vh 10vw;
     }
 
+    .frame_night {
+        padding: 10px 15px;
+        font-size: 20px;
+    }
+    
     .frame {
         padding: 10px 15px;
         font-size: 20px;
