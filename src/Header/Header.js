@@ -13,30 +13,35 @@ const Header = () => {
     const dispatch = useDispatch();
     const toggle = useSelector(selectToggle);
 
-    const handleVisibility = (e) => {
-        dispatch(toggleV(!isVisible));
-        setIsVisible(!isVisible);
+    useEffect(() => {
+        // Update data-theme attribute based on visibility
+        document.body.setAttribute('data-theme', toggle.isVisible ? 'light' : 'dark');
+    }, [toggle.isVisible]);
+
+    const handleVisibility = () => {
+        const newVisibility = !isVisible;
+        dispatch(toggleV(newVisibility));
+        setIsVisible(newVisibility);
     };
 
 
     const toggleHamburger = (e) => {
-        dispatch(toggleH(!isToggle));
-        setIsToggle(!isToggle);
-        let scroll = window.scrollY;
+        const newToggleState = !isToggle;
+        dispatch(toggleH(newToggleState));
+        setIsToggle(newToggleState);
+
+        const scroll = window.scrollY;
         setIsScroll(scroll);
-        if (!isToggle) {
+
+        if (newToggleState) {
             document.body.classList.add('scrollbar-lock');
             document.body.style.overflow = "hidden";
-            document.body.style.top = `${scroll * -1}px`;
+            document.body.style.top = `${-scroll}px`;
             document.querySelector('html').style.scrollBehavior = "auto";
         } else {
             document.body.classList.remove('scrollbar-lock');
-            document.body.style.overflow = "hidden scroll";
-            document.body.style.top = null;
-            document.body.style.left = null;
-            document.body.style.right = null;
-            document.body.style.bottom = null;
-            document.body.style.position = null;
+            document.body.style.overflow = "auto";
+            document.body.style.top = '';
             window.scrollTo(0, isScroll);
             document.querySelector('html').style.scrollBehavior = "smooth";
         }
@@ -46,9 +51,7 @@ const Header = () => {
 
 
     return (
-        <header className={`${styles.header_main_container} ${toggle.isVisible ? '' : styles.night}`} id='header_main_container' >
-
-
+        <header className={`${styles.header_main_container}`} id='header_main_container' >
             <div className={styles.title}>
                 <h1 className={styles.namef}>Arian</h1>
                 <h1 className={styles.namel}>Jaihooni</h1>
@@ -62,13 +65,18 @@ const Header = () => {
             </div>
 
 
-
             <div className={`${styles.nav} ${toggle.isToggle ? styles.nav_mobile : ""}`} id="nav" >
                 <nav id='header'>
                     <ul className={`${styles.nav_ul}`}>
-                        <li className={styles.nav_li_contact}><a href="#projects" onClick={toggle.isToggle ? () => toggleHamburger() : null}>Projects</a></li>
-                        <li className={styles.nav_li_about}><a href="#Skills" onClick={toggle.isToggle ? () => toggleHamburger() : null}>Skills</a></li>
-                        <li className={styles.nav_li_projects}><a href="#About" onClick={toggle.isToggle ? () => toggleHamburger() : null}>About</a></li>
+                        <li className={styles.nav_li_contact}>
+                            <a href="#projects" onClick={toggle.isToggle ? () => toggleHamburger() : null}>Projects</a>
+                        </li>
+                        <li className={styles.nav_li_about}>
+                            <a href="#Skills" onClick={toggle.isToggle ? () => toggleHamburger() : null}>Skills</a>
+                        </li>
+                        <li className={styles.nav_li_projects}>
+                            <a href="#About" onClick={toggle.isToggle ? () => toggleHamburger() : null}>About</a>
+                        </li>
                     </ul>
 
 
@@ -78,9 +86,13 @@ const Header = () => {
 
             {
                 isVisible ?
-                    <div onClick={(e) => handleVisibility()} className={styles.wrapper}><img className={styles.visibility} src={Sun} aria-label="Light mode" id="sun" /></div>
+                    <div onClick={(e) => handleVisibility()} className={styles.wrapper}>
+                        <img className={styles.visibility} src={Sun} aria-label="Light mode" id="sun" />
+                    </div>
                     :
-                    <div onClick={(e) => handleVisibility()} className={styles.wrapper}><img className={styles.nightVisibility} src={Moon} aria-label="Dark mode" id="moon" /></div>
+                    <div onClick={(e) => handleVisibility()} className={styles.wrapper}>
+                        <img className={styles.visibility} src={Moon} aria-label="Dark mode" id="moon" />
+                    </div>
             }
             <div className={`${toggle.isToggle ? styles.main_mobile : ""}`} onClick={(e) => toggleHamburger()}></div>
 

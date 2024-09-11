@@ -3,18 +3,182 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 
+
+:root {
+  /* Light Background Color Shades */
+  --background-light-lightest: #ffffff;
+  --background-light-light: #f0f0f0;
+  --background-light: #f5f5f5;
+  --background-light-dark: #dcdcdc;
+  --background-light-darkest: #c0c0c0;
+
+  /* Dark Background Color Shades */
+  --background-dark-lightest: #070A24;
+  --background-dark-light: #0A0D32;
+  --background-dark: #0E1243;
+  --background-dark-dark: #1A2B6A;
+  --background-dark-darkest: #3B4A8B;
+
+  /* Primary Color Shades */
+  --primary-lightest: #9AB9F3;
+  --primary-light: #6A8FE7;
+  --primary: #4169E1;
+  --primary-dark: #3A5DB8;
+  --primary-darkest: #2D4A9A;
+
+  /* Secondary Color Shades */
+  --secondary-lightest: #C2FFF5;
+  --secondary-light: #8DFFE6;
+  --secondary: #32FFEB;
+  --secondary-dark: #29CCBF;
+  --secondary-darkest: #1F9F9B;
+
+  /* Success Colors */
+  --success-lightest: #D4F5D6;
+  --success-light: #A0E8A2;
+  --success: #4CAF50;
+  --success-dark: #388E3C;
+  --success-darkest: #2C6C2F;
+
+  /* Caution Colors */
+  --caution-lightest: #FFF5D6;
+  --caution-light: #FFE8A2;
+  --caution: #FFEB3B;
+  --caution-dark: #FBC02D;
+  --caution-darkest: #F9A825;
+
+  /* Error Colors */
+  --error-lightest: #FAD4D4;
+  --error-light: #F8A2A2;
+  --error: #F44336;
+  --error-dark: #C62828;
+  --error-darkest: #B71C1C;
+
+  /* Fallback Colors */
+  --background-light-fallback: #e0e0e0;
+  --background-dark-fallback: #0a0d32;
+  --primary-fallback: #0047ab;
+  --secondary-fallback: #1e8a8a;
+  --success-fallback: #388E3C;
+  --caution-fallback: #F9A825;
+  --error-fallback: #C62828;
+
+  /* Shades of White */
+  --white-lightest: #ffffff;
+  --white-light: #f5f5f5;
+  --white: #e0e0e0;
+
+  /* Shades of Gray */
+  --gray-lightest: #dcdcdc;
+  --gray-light: #a9a9a9;
+  --gray: #808080;
+  --gray-dark: #606060;
+  --gray-darkest: #404040;
+
+  /* Shades of Black */
+  --black-darkest: #000000;
+  --black-dark: #1c1c1c;
+  --black: #333333;
+  --black-light: #4d4d4d;
+  --black-lightest: #666666;
+}
+
+[data-theme='dark'] {
+  /* Dark Background Color Shades */
+  --background-light-lightest: #070A24;
+  --background-light-light: #0A0D32;
+  --background-light: #0E1243;
+  --background-light-dark: #1A2B6A;
+  --background-light-darkest: #3B4A8B;
+
+  /* Light Background Color Shades */
+  --background-dark-lightest: #ffffff;
+  --background-dark-light: #f0f0f0;
+  --background-dark: #f5f5f5;
+  --background-dark-dark: #dcdcdc;
+  --background-dark-darkest: #c0c0c0;
+
+  /* Primary Color Shades */
+  --primary-lightest: #2D4A9A;
+  --primary-light: #3A5DB8;
+  --primary: #4169E1;
+  --primary-dark: #6A8FE7;
+  --primary-darkest: #9AB9F3;
+
+  /* Secondary Color Shades */
+  --secondary-lightest: #1F9F9B;
+  --secondary-light: #29CCBF;
+  --secondary: #32FFEB;
+  --secondary-dark: #8DFFE6;
+  --secondary-darkest: #C2FFF5;
+
+  /* Success Colors */
+  --success-lightest: #2C6C2F;
+  --success-light: #388E3C;
+  --success: #4CAF50;
+  --success-dark: #A0E8A2;
+  --success-darkest: #D4F5D6;
+
+  /* Caution Colors */
+  --caution-lightest: #F9A825;
+  --caution-light: #FBC02D;
+  --caution: #FFEB3B;
+  --caution-dark: #FFE8A2;
+  --caution-darkest: #FFF5D6;
+
+  /* Error Colors */
+  --error-lightest: #B71C1C;
+  --error-light: #C62828;
+  --error: #F44336;
+  --error-dark: #F8A2A2;
+  --error-darkest: #FAD4D4;
+
+  /* Shades of White */
+  --white-lightest: #ffffff;
+  --white-light: #f5f5f5;
+  --white: #e0e0e0;
+
+  /* Shades of Gray */
+  --gray-lightest: #dcdcdc;
+  --gray-light: #a9a9a9;
+  --gray: #808080;
+  --gray-dark: #606060;
+  --gray-darkest: #404040;
+
+  /* Shades of Black */
+  --black-darkest: #000000;
+  --black-dark: #1c1c1c;
+  --black: #333333;
+  --black-light: #4d4d4d;
+  --black-lightest: #666666;
+}
+
 * {
   position: relative;
   z-index: 2;
-  font-family: 'Titillium Web','PT Sans Narrow', 'Open Sans', 'ui-sans-serif', 'system-ui';
+  font-family: 'Titillium Web', 'PT Sans Narrow', 'Open Sans', 'ui-sans-serif', 'system-ui';
 }
 
-h1,h2,h3,h4,h5,h6,li,p,a,ul{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p,
+a,
+ul {
   margin: 0px;
   padding: 0px;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-align: end;
 }
 
@@ -23,13 +187,18 @@ html {
 }
 
 p {
-  font-size: clamp(12px, 1rem, 20px);
+  font-size: clamp(12px, 2vw + 1rem, 20px);
 }
 
 .App {
-  background: #F5F5F5;
+  background: var(--background-light);
   transition: background 1s, color 0.4s;
-  color: #0E1243;
+  color: var(--background-dark);
+}
+
+[data-theme='dark'] .App {
+  background: var(--background-light);
+  color: var(--background-dark)
 }
 
 .night {

@@ -1,23 +1,16 @@
 .skills_container {
     min-height: 400px;
-    color: black;
+    color: var(--black);
     border-radius: 20px;
     z-index: 8;
-    margin: 10vh 0px;
+    margin: 10vh 5vw;
     scroll-margin-top: 75px;
-    background: #4169E1;
+    background: var(--primary);
     transition: background 1s linear;
 }
 
-.night {
-    min-height: 400px;
-    color: white;
-    border-radius: 20px;
-    background: #4169E1;
-    z-index: 8;
-    margin: 10vh 0px;
-    scroll-margin-top: 75px;
-    transition: background 1s linear;
+[data-theme='dark'] .skills_container {
+    color: var(--background-dark);
 }
 
 .title {
@@ -28,44 +21,57 @@
 
 .skills {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    perspective: 2000px;
-    perspective-origin: 50%;
+    align-items: center;
+    padding: 20px;
     gap: 20px;
-    color: white;
-    padding: 0px 30vw 5vh 30vw;
+}
+
+.skills h2 {
+    color: var(--black-darkest);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    text-align: center;
 }
 
 .frame {
-    border: 2px solid black;
+    border: 2px solid var(--black-darkest);
+    color: var(--background-dark);
     border-radius: 20px;
     padding: 20px 32px;
     text-align: center;
+    font-size: clamp(16px, 20px, 24px);
     transition: all 0.2s linear;
 }
 
-.frame_night {
-    border: 2px solid white;
-    color: white;
-    border-radius: 20px;
-    padding: 20px 32px;
-    text-align: center;
-    transition: all 0.2s linear;
+[data-theme='dark'] .frame {
+    color: var(--background-dark);
+    border: 2px solid var(--background-dark);
 }
 
-
+.sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
 .box {
     width: 120px;
     height: 80px;
     position: relative;
     transform-style: preserve-3d;
+    perspective: 2000px;
+    perspective-origin: 50%;
     transition: transform 0.2s linear;
+    color: var(--background-light);
 
-    --main-bg-color: black;
-    --side-bg-color: turquoise;
+    --main-bg-color: var(--black-darkest);
+    --side-bg-color: var(--secondary);
 
+}
+[data-theme='dark'] .box {
+    color: var(--background-dark);
 }
 .boxFace {
     position: absolute;
@@ -80,7 +86,7 @@
     text-align: center;
     vertical-align: middle;
     line-height: 60px;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     background: var(--main-bg-color);
 }
 .leftSide{ transform: rotateY(-90deg) translateZ( 60px ); }
@@ -89,7 +95,7 @@
     width: 40px;
     height: 80px;
     left: 40px;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     background: var(--side-bg-color);
 }
 .topSide{ transform: rotateX( 90deg) translateZ(40px); }
@@ -98,7 +104,7 @@
     width: 120px;
     height: 40px;
     top: 20px;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     background: var(--side-bg-color);
 }
 
@@ -117,7 +123,6 @@
         font-size: 52px;
     }
     .skills {
-        color: black;
         padding: 1vh 10vw;
     }
 
@@ -138,18 +143,5 @@
     .title {
         font-size: 72px;
     }
-    .skills {
-        color: black;
-    }
 
-}
-
-
-
-@keyframes pop {
-    
-    to {
-        scale: 1;
-        opacity: 1;
-    }
 }

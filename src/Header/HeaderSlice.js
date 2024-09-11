@@ -3,9 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const isDaytime = () => {
     let date = new Date();
     let hour = date.getHours();
-    if ( hour > 18 ) {
-        return false;
-    } else { return true; } 
+    return hour <= 18;
 };
 
 const headerSlice = createSlice({

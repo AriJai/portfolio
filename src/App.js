@@ -5,23 +5,23 @@ import Skills from './/Skills/Skills';
 import About from './/About/About';
 import Projects from './/Projects/Projects';
 import Footer from './/Footer/Footer';
-import { useSelector } from 'react-redux';
-import { selectToggle } from './Header/HeaderSlice';
+import { useEffect } from 'react';
 
 function App() {
-  const toggle = useSelector(selectToggle);
-  window.onbeforeunload = function () {
+
+  useEffect(() => {
+    //Format webpage to scroll to top on reload or entering site
     window.scrollTo(0,0);
-  };
+  }, []);
 
   return (
-    <div className={toggle.isVisible ? `App` : `night`}>
+    <div className={`App`}>
       <Header />
       <Hero />
-      <Projects/>
-      <Skills/>
-      <About/>
-      <Footer/> 
+      <Projects />
+      <Skills />
+      <About />
+      <Footer />
     </div>
   );
 }

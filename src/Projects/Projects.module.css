@@ -47,7 +47,7 @@
     height: 100%;
     place-self: center;
     object-fit: contain;
-    background: black;
+    background: var(--black-darkest);
 }
 
 .project_desc {
@@ -84,8 +84,8 @@
     border-radius: 20px;
     width: 50vw;
     aspect-ratio: 16/ 9;
-    border: 1px solid black;
-    background: black;
+    border: 1px solid var(--black);
+    background: var(--black);
 }
 
 .project_preview {
@@ -118,7 +118,7 @@
     .projects_flex_container {
         height: unset;
         grid-area: 2 / 1 / 3 / 2;
-        border-top: 1px dotted black;
+        border-top: 1px dotted var(--black);
         padding: 20px;
     }
 
