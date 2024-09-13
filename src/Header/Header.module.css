@@ -11,7 +11,8 @@
     background: var(--primary);
     color: var(--background-dark);
     transition: top 0.1s, color 1s, background 1s;
-
+    border-bottom: 1px solid black;
+    box-shadow: 0px 4px 4px var(--black);
 }
 
 [data-theme='dark'] .header_main_container {
@@ -50,11 +51,10 @@
 
 .hamburger {
     display: none;
-    background: var(--black);
+    background: var(--black-darkest);
     width: 30px;
     height: 30px;
     transition: all 1s linear;
-    z-index: 3;
 
 }
 
@@ -220,6 +220,7 @@ li:hover::after {
 .visibility {
     width: 40px;
     height: 40px;
+    fill: var(--white);
     transform-origin: 50% 150%;
     transition: transform 0.3s;
     animation: rotateEnd 0.2s linear forwards;
@@ -231,7 +232,8 @@ li:hover::after {
 
 @media only screen and (min-width: 0px) and (max-width: 700px) {
     .header_main_container {
-        grid-template: 75px / 0.5fr 2fr 1fr 1fr;
+        grid-template: 75px / 1fr 2fr 0.5fr 1fr;
+        box-shadow: unset;
     }
 
     .title {
@@ -250,7 +252,7 @@ li:hover::after {
         grid-area: 1 / 3 / 2 / 5;
         position: relative;
         display: grid;
-        background-color: var(--primary-darkest);
+        background-color: var(--primary-dark);
         width: 100%;
         top: -350px;
         justify-self: end;
@@ -277,6 +279,10 @@ li:hover::after {
                 grid-area: 3 / 1 / 4 / 2;
             }
         }
+    }
+
+    [data-theme='dark'] .nav {
+        background-color: var(--background-light-light);
     }
 
     .nav_mobile {

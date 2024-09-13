@@ -65,10 +65,10 @@
 .projects_highlight {
     display: grid;
     border-radius: 20px;
-    cursor: pointer;
     grid-area: 1 / 2 / 2 / 3;
     place-items: center;
-    grid-template: max(auto, 500px) 5% auto / 100%;
+    height: 100%;
+    grid-template-rows: minmax(500px, auto) 5% auto;
 }
 
 .highlight_title {
@@ -86,6 +86,12 @@
     aspect-ratio: 16/ 9;
     border: 1px solid var(--black);
     background: var(--black);
+    transition: scale 0.3s ease;
+}
+
+.highlight_screen:hover {
+    scale: 0.95;
+    cursor: pointer;
 }
 
 .project_preview {

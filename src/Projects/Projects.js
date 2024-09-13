@@ -16,8 +16,8 @@ const Projects = () => {
 
     const projectHighLight = (highLight = ProjectApps[0]) => {
         return (
-            <div className={styles.projects_highlight} onClick={() => handleClick(highLight.link)}>
-                {highLight.highlightImg ? <img className={styles.highlight_screen} src={highLight.highlightImg}></img> : <div className={styles.highlight_screen}></div>}
+            <div className={styles.projects_highlight}>
+                {highLight.highlightImg ? <img className={styles.highlight_screen} src={highLight.highlightImg} onClick={() => handleClick(highLight.link)}></img> : <div className={styles.highlight_screen}></div>}
                 <h3 className={styles.highlight_title}>{highLight.name}</h3>
                 <p className={styles.project_preview}>{highLight.desc}</p>
             </div>
