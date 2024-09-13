@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/myportfolioapp/static/css/main.eff65744.css",
-    "main.js": "/myportfolioapp/static/js/main.7cd4b37b.js",
+    "main.css": "/myportfolioapp/static/css/main.0f9097e3.css",
+    "main.js": "/myportfolioapp/static/js/main.e48a94c9.js",
     "static/js/453.db46277d.chunk.js": "/myportfolioapp/static/js/453.db46277d.chunk.js",
     "static/media/RM Cover.png": "/myportfolioapp/static/media/RM Cover.0140e25a85d80fb0fb06.png",
     "static/media/me_full.jpg": "/myportfolioapp/static/media/me_full.f368cd1689cf89ec728d.jpg",
     "static/media/Logo RM.png": "/myportfolioapp/static/media/Logo RM.75c351a7046bdc56532a.png",
     "index.html": "/myportfolioapp/index.html",
-    "main.eff65744.css.map": "/myportfolioapp/static/css/main.eff65744.css.map",
-    "main.7cd4b37b.js.map": "/myportfolioapp/static/js/main.7cd4b37b.js.map",
+    "main.0f9097e3.css.map": "/myportfolioapp/static/css/main.0f9097e3.css.map",
+    "main.e48a94c9.js.map": "/myportfolioapp/static/js/main.e48a94c9.js.map",
     "453.db46277d.chunk.js.map": "/myportfolioapp/static/js/453.db46277d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eff65744.css",
-    "static/js/main.7cd4b37b.js"
+    "static/css/main.0f9097e3.css",
+    "static/js/main.e48a94c9.js"
   ]
 }
