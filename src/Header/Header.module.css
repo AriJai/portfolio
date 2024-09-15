@@ -215,6 +215,7 @@ li:hover::after {
 
 .wrapper:hover {
     scale: 1.05;
+    cursor: pointer;
 }
 
 .visibility {

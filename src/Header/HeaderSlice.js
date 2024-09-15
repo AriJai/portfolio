@@ -1,26 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+
+/**
+    returns true if it's between 6am and 6pm.
+**/
 export const isDaytime = () => {
-    let date = new Date();
-    let hour = date.getHours();
-    return hour <= 18;
+    const date = new Date();
+    const hour = date.getHours();
+    return hour >= 6 && hour <= 18;
 };
 
 const headerSlice = createSlice({
     name: 'header',
-    initialState: {isToggle: false, isVisible: isDaytime()},
+    initialState: {activeHamburger: false, activeLightmode: isDaytime()},
     reducers: {
-        toggleH: (state, action) => {
+        hamburger: (state, action) => {
             console.log(`toggleH: ${action.payload}`);
-            state.isToggle = action.payload;
+            state.activeHamburger = action.payload;
         },
-        toggleV: (state, action) => {
-            console.log(`toggleV: ${action.payload}`);
-            state.isVisible = action.payload;
+        lightmode: (state, action) => {
+            console.log(`toggleLightMode: ${action.payload}`);
+            state.activeLightmode = action.payload;
         } 
     }
-})
+});
 
 export const selectToggle = (state) => state.header;
-export const { toggleH, toggleV } = headerSlice.actions;
+export const { hamburger, lightmode } = headerSlice.actions;
 export default headerSlice.reducer;

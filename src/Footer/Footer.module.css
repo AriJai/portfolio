@@ -11,6 +11,10 @@
     background-image: linear-gradient(var(--background-light) 10%,var(--primary));
 }
 
+.footer_container > p {
+    margin: 0px 5%;
+}
+
 .to_top {
     position:absolute;
     bottom: 50px;
@@ -28,6 +32,7 @@
 
 .to_top:hover {
     height: 120px;
+    cursor: pointer;
 }
 
 .to_top:hover::before {
