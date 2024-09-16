@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 import styles from './About.module.css';
-import { useSelector } from 'react-redux';
-import { selectToggle } from '../Header/HeaderSlice';
 
 const About = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const handleExpand = () => setIsExpanded(prevState => !prevState);
 
     return (
-        <section className={styles.about_container} id="About">
+        <section className={styles.mainContainer} id="About">
             <h2 className={styles.title}>About</h2>
             <div id="me" className={styles.me}>
                 <p>I develop websites and web applications using JSX, HTML, and CSS.</p>
                 <p>This is a journey to learn of the ever-changing landscape of the Internet. I&apos;m excited to see what else is out there.</p>
                 <p>When I&apos;m away from the computer, you can probably find me outside in search of more coffee.</p>
-                <button className={styles.expand_button} onClick={handleExpand} >
+                <button className={styles.expandButton} onClick={handleExpand} >
                     {isExpanded ?
                         <svg viewBox="0 0 24 24" aria-label="Read Less" className={styles.icon}>
                         <path d="M22.5,18a1.5,1.5,0,0,1-1.061-.44L13.768,9.889a2.5,2.5,0,0,0-3.536,0L2.57,17.551A1.5,1.5,0,0,1,.449,15.43L8.111,7.768a5.505,5.505,0,0,1,7.778,0l7.672,7.672A1.5,1.5,0,0,1,22.5,18Z"/>

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Skills.module.css';
-import { useSelector } from 'react-redux';
-import { selectToggle } from '../Header/HeaderSlice';
 
 const Skills = () => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -117,9 +115,9 @@ const Skills = () => {
 
 
     return (
-        <section className={styles.skills_container} id="Skills">
+        <section className={styles.mainContainer} id="Skills">
             <h2 className={styles.title}>Skills</h2>
-            <div className={styles.skills}>
+            <div className={styles.content}>
                 {skillsBox()}
             </div>
         </section>

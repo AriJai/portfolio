@@ -1,19 +1,19 @@
 import React from 'react';
 import styles from './Hero.module.css';
-import me from './Images/me_full.jpg'
+import me from './Images/me_full.jpg';
 
 const Hero = () =>
     (
-        <section className={styles.hero_section}>
-            <div className={styles.hero_statement}>
-                <h2 className={styles.hero_statement1}>Hello! I&apos;m Ari!</h2>
-                <h3 className={styles.hero_statement2}>I&apos;m a Frontend developer</h3>
-                <p className={styles.hero_statement3}>I love to build visually pleasing websites that are clean and functional.</p>
+        <section className={styles.mainContainer}>
+            <div className={styles.headlineContainer}>
+                <h2 className={styles.headline}>Hello! I&apos;m Ari!</h2>
+                <h3 className={styles.subHeadline}>I&apos;m a Frontend developer</h3>
+                <p className={styles.heroMessage}>I love to build visually pleasing websites that are clean and functional.</p>
             </div>
-            <img className={styles.photo} src={me} alt="Hello it's Arian, nice to meet you!" />
+            <img className={styles.heroPhoto} src={me} alt="Hello it's Arian, nice to meet you!" />
 
-            <div className={styles.social_media}>
-                <a className={styles.social_div} href="http://www.linkedin.com/in/arian-jaihooni-5112b1279" target="_blank">
+            <div className={styles.socialMediaContainer}>
+                <a className={styles.anchorToSocialSite} href="http://www.linkedin.com/in/arian-jaihooni-5112b1279" target="_blank">
                     <svg id="LinkedIn" viewBox="0 0 24 24" className={styles.icon} aria-label="My LinkedIn profile">
                     <g>
                         <path id="Path_2525" d="M23.002,21.584h0.227l-0.435-0.658l0,0c0.266,0,0.407-0.169,0.409-0.376c0-0.008,0-0.017-0.001-0.025   c0-0.282-0.17-0.417-0.519-0.417h-0.564v1.476h0.212v-0.643h0.261L23.002,21.584z M22.577,20.774h-0.246v-0.499h0.312   c0.161,0,0.345,0.026,0.345,0.237c0,0.242-0.186,0.262-0.412,0.262" />
@@ -21,9 +21,9 @@ const Hero = () =>
                         <path id="Path_2526" d="M22.603,19.451c-0.764,0.007-1.378,0.633-1.37,1.397c0.007,0.764,0.633,1.378,1.397,1.37   c0.764-0.007,1.378-0.633,1.37-1.397c-0.007-0.754-0.617-1.363-1.37-1.37H22.603 M22.635,22.059   c-0.67,0.011-1.254-0.522-1.265-1.192c-0.011-0.67,0.523-1.222,1.193-1.233c0.67-0.011,1.222,0.523,1.233,1.193   c0,0.007,0,0.013,0,0.02C23.81,21.502,23.29,22.045,22.635,22.059h-0.031" />
                     </g>
                     </svg>
-                    <span className={styles.social_label}>LinkedIn</span>
+                    <span className={styles.nameOfSocialSite}>LinkedIn</span>
                 </a>
-                <a className={styles.social_div} href="https://github.com/AriJai" target="_blank">
+                <a className={styles.anchorToSocialSite} href="https://github.com/AriJai" target="_blank">
                     <svg viewBox="0 0 24 24" className={styles.icon} aria-label="My Github profile">
                     <g>
                         <path d="M12,0.296c-6.627,0-12,5.372-12,12c0,5.302,3.438,9.8,8.206,11.387   c0.6,0.111,0.82-0.26,0.82-0.577c0-0.286-0.011-1.231-0.016-2.234c-3.338,0.726-4.043-1.416-4.043-1.416   C4.421,18.069,3.635,17.7,3.635,17.7c-1.089-0.745,0.082-0.729,0.082-0.729c1.205,0.085,1.839,1.237,1.839,1.237   c1.07,1.834,2.807,1.304,3.492,0.997C9.156,18.429,9.467,17.9,9.81,17.6c-2.665-0.303-5.467-1.332-5.467-5.93   c0-1.31,0.469-2.381,1.237-3.221C5.455,8.146,5.044,6.926,5.696,5.273c0,0,1.008-0.322,3.301,1.23   C9.954,6.237,10.98,6.104,12,6.099c1.02,0.005,2.047,0.138,3.006,0.404c2.29-1.553,3.297-1.23,3.297-1.23   c0.653,1.653,0.242,2.873,0.118,3.176c0.769,0.84,1.235,1.911,1.235,3.221c0,4.609-2.807,5.624-5.479,5.921   c0.43,0.372,0.814,1.103,0.814,2.222c0,1.606-0.014,2.898-0.014,3.293c0,0.319,0.216,0.694,0.824,0.576   c4.766-1.589,8.2-6.085,8.2-11.385C24,5.669,18.627,0.296,12,0.296z" />
@@ -36,7 +36,7 @@ const Hero = () =>
                         <path d="M8.943,19.731c0.017,0.096-0.082,0.196-0.224,0.222c-0.139,0.026-0.268-0.034-0.286-0.13   c-0.017-0.099,0.084-0.198,0.223-0.224C8.797,19.574,8.925,19.632,8.943,19.731L8.943,19.731z" />
                     </g>
                     </svg>
-                    <span className={styles.social_label}>Github</span>
+                    <span className={styles.nameOfSocialSite}>Github</span>
                 </a>
             </div>
         </section>

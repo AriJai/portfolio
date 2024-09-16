@@ -1,4 +1,4 @@
-.skills_container {
+.mainContainer {
     min-height: 400px;
     color: var(--black);
     border-radius: 20px;
@@ -9,7 +9,7 @@
     transition: background 1s linear;
 }
 
-[data-theme='dark'] .skills_container {
+[data-theme='dark'] .mainContainer {
     color: var(--background-dark);
 }
 
@@ -19,7 +19,7 @@
     font-weight: lighter;
 }
 
-.skills {
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@
     gap: 20px;
 }
 
-.skills h2 {
+.content h2 {
     color: var(--black-darkest);
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     text-align: center;
@@ -111,24 +111,16 @@
 
 
 @media only screen and (min-width: 0px) and (max-width: 700px) {
-    .skills_container {
-        margin: 5vh 1vw;
-    }
-
-    .night {
+    .mainContainer {
         margin: 5vh 1vw;
     }
 
     .title{
         font-size: 52px;
     }
-    .skills {
+    
+    .content {
         padding: 1vh 10vw;
-    }
-
-    .frame_night {
-        padding: 10px 15px;
-        font-size: 20px;
     }
     
     .frame {

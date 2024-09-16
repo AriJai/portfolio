@@ -1,4 +1,4 @@
-.footer_container {
+.mainContainer {
     position: relative;
     min-height: calc(100vh - 74px);
     color: var(--white);
@@ -7,15 +7,15 @@
     transition: background-image 1s;
 }
 
-[data-theme='dark'] .footer_container {
+[data-theme='dark'] .mainContainer {
     background-image: linear-gradient(var(--background-light) 10%,var(--primary));
 }
 
-.footer_container > p {
+.mainContainer > p {
     margin: 0px 5%;
 }
 
-.to_top {
+.scrollToTopButton {
     position:absolute;
     bottom: 50px;
     padding: 0px;
@@ -30,12 +30,12 @@
     transition: all 0.1s linear;
 }
 
-.to_top:hover {
+.scrollToTopButton:hover {
     height: 120px;
     cursor: pointer;
 }
 
-.to_top:hover::before {
+.scrollToTopButton:hover::before {
     content: 'Back up?';
 }
 
@@ -45,7 +45,7 @@
     place-items: center;
 }
 
-.up_arrow {
+.upArrowIcon {
     grid-area: 2 / 1 / 3 / 2;
     width: 32px;
     height: 32px;
@@ -54,7 +54,7 @@
     animation: moving 1s linear infinite;
 }
 
-.hor_line {
+.horizontalLineIcon {
     grid-area: 1 / 1 / 2 / 2;
     width: 32px;
     height: 32px;

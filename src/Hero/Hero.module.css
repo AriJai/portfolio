@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
 
 
-.hero_section {
+.mainContainer {
     position: relative;
     margin-top: 75px;
     height: max(80vh, 900px);
@@ -11,7 +11,7 @@
     grid-template: 1fr 1fr 1fr / 1fr 1fr;
 }
 
-.hero_statement {
+.headlineContainer {
     grid-area: 1 / 1 / 2 / 3;
     max-width: 100vw;
     text-align: right;
@@ -19,27 +19,27 @@
     margin-right: 15%;
 }
 
-.hero_statement1 {
+.headline {
     line-height: 100px;
     font-size: clamp(32px, 7vw, 100px);
     animation: pop 1s ease-out;
 }
 
-.hero_statement2 {
+.subHeadline {
     opacity: 0;
     line-height: 40px;
     font-size: clamp(20px, 2.5vw, 40px);
     animation: pop 1s ease-out 0.8s forwards;
 }
 
-.hero_statement3 {
+.heroMessage {
     opacity: 0;
     line-height: 24px;
     font-size: clamp(12px, 2vw, 24px);
     animation: pop 1s ease-out 1.5s forwards;
 }
 
-.photo {
+.heroPhoto {
     background-position: center;
     background: var(--black);
     clip-path: circle();
@@ -55,7 +55,7 @@
     animation: pop 0.5s ease-out 2s forwards;
 }
 
-.social_media {
+.socialMediaContainer {
     grid-area: 2 / 2 / 3 / 3;
     display: flex;
     flex-direction: column;
@@ -63,19 +63,19 @@
     gap: 10px;
 }
 
-.social_div {
+.anchorToSocialSite {
     display: inline-flex;
     align-items: center;
     width: fit-content;
     margin-left: 10%;
 }
 
-.social_div:hover {
+.anchorToSocialSite:hover {
     cursor: pointer;
 }
 
 
-.social_div:hover .icon {
+.anchorToSocialSite:hover .icon {
     transform: scale(1.1);
     fill: var(--secondary-dark);
 }
@@ -92,82 +92,82 @@
 }
 
 
-.social_label {
+.nameOfSocialSite {
     display: inline;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 700px) {
 
-    .hero_statement{
+    .headlineContainer{
         grid-area: 1 / 1 / 2 / 3;
         text-align: center;
         margin-right: unset;
     }
 
-    .hero_statement1 {
+    .headline {
         line-height: 48px;
         text-align: unset;
     }
     
-    .hero_statement2 {
+    .subHeadline {
         line-height: 24px;
         text-align: unset;
     }
     
-    .hero_statement3 {
+    .heroMessage {
         top: unset;
         line-height: 16px;
     }
 
-    .photo {
+    .heroPhoto {
         grid-area: 2 / 1 / 3 / 3;
         width: 60vw;
         height: 60vw;
     }
 
-    .social_media {
+    .socialMediaContainer {
         grid-area: 3 / 1 / 4 / 3;
         align-items: center;
     }
 
-    .social_div {
+    .anchorToSocialSite {
         margin-left: unset;
     }
 }
 
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
 
-    .hero_section {
+    .mainContainer {
         margin-top: 56px;
     }
 
-    .hero_statement1 {
+    .headline {
         align-self: end;
         line-height: 72px;
         margin-right: unset;
     }
     
-    .hero_statement2{
+    .subHeadline{
         line-height: 36px;
     }
 
-    .hero_statement3 {
+    .heroMessage {
         line-height: 20px;
         text-align: right;
     }
 
-    .photo {
+    .heroPhoto {
         grid-area: 2 / 1 / 3 / 3;
         width: 40vw;
         height: 40vw;
     }
 
-    .social_media {
+    .socialMediaContainer {
         grid-area: 3 / 1 / 4 / 3;
         align-items: center;
     }
 
-    .social_div {
+    .anchorToSocialSite {
         margin-left: unset;
     }
 
