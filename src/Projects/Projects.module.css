@@ -5,6 +5,7 @@
 
 .title {
     font-size: 100px;
+    line-height: 100px;
     opacity: 50%;
     font-weight: lighter;
     padding-right: 12px;
@@ -44,6 +45,11 @@
     place-self: center;
     object-fit: contain;
     background: var(--black-darkest);
+    transition: transform 0.3s ease;
+}
+
+.projectListThumbnail:hover {
+    transform: scale(0.95);
 }
 
 .projectName {
@@ -69,11 +75,11 @@
     aspect-ratio: 16/ 9;
     border: 1px solid var(--black);
     background: var(--black);
-    transition: scale 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .highlightThumbnail:hover {
-    scale: 0.95;
+    transform: scale(0.95);
     cursor: pointer;
 }
 
@@ -155,6 +161,7 @@
 @media only screen and (min-width: 700px) and (max-width: 1200px) {
     .title {
         font-size: 72px;
+        line-height: 72px;
     }
 
     .content {

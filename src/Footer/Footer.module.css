@@ -62,22 +62,6 @@
     padding: 0;
 }
 
-@media only screen and (min-width: 0px) and (max-width: 700px) {
-    .footer_container {
-        height: calc(100vh - 75px);
-        z-index: 2;
-    }
-}
-
-@media only screen and (min-width: 700px) and (max-width: 1200px) {
-    .footer_container {
-        height: calc(100vh - 56px);
-    }
-
-    .night {
-        height: calc(100vh - 56px);
-    }
-}
 
 @keyframes moving {
     0%, 100% {

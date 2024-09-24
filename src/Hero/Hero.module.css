@@ -61,6 +61,8 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+    opacity: 0;
+    animation: pop 0.5s ease-out 2s forwards;
 }
 
 .anchorToSocialSite {
