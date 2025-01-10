@@ -6,10 +6,10 @@ const Skills = () => {
     const [movement, setMovement] = useState({ x: 0, y: 0 });
     const [isMove, setIsMove] = useState(false);
 
-    const frontendSkills = ["JavaScript", "CSS", "React", "Redux", "HTML", "JSX", "Next.js"];
+    const frontendSkills = ["JavaScript", "CSS", "React", "Redux", "HTML", "JSX", "Next.js", "Php", "Tailwind"];
     const backendSkills = ["PostgreSQL", "Express.js"];
     const languages = ["JavaScript", "Kotlin", "SQL"];
-    const tools = ["Github", "Bash", "JSON/API", "Postman"];
+    const tools = ["Github", "Bash", "JSON/API", "Postman", "Docker", "Wordpress"];
 
     // Sets initial (x,y) coordinates when mouse enters box div
     useEffect(() => {
@@ -91,19 +91,19 @@ const Skills = () => {
         } else {
             return (
                 <>
-                    <h2>Front End</h2>
+                    <h3>Front End</h3>
                     <div className={styles.sections}>
                         {frontendSkills.map((skill, i) => box(skill, i))}
                     </div>
-                    <h2>Tools</h2>
+                    <h3>Tools</h3>
                     <div className={styles.sections}>
                         {tools.map((skill, i) => box(skill, i))}
                     </div>
-                    <h2>Languages</h2>
+                    <h3>Languages</h3>
                     <div className={styles.sections}>
                         {languages.map((skill, i) => box(skill, i))}
                     </div>
-                    <h2>Back End</h2>
+                    <h3>Back End</h3>
                     <div className={styles.sections}>
                         {backendSkills.map((skill, i) => box(skill, i))}
                     </div>
@@ -115,10 +115,12 @@ const Skills = () => {
 
 
     return (
-        <section className={styles.mainContainer} id="Skills">
-            <h2 className={styles.title}>Skills</h2>
-            <div className={styles.content}>
-                {skillsBox()}
+        <section className={`wrap ${styles.mainContainer}`} id="Skills">
+            <div className={`content ${styles.skillsContainer}`}>
+                <h2 className={`title `}>Skills</h2>
+                <div className={styles.content}>
+                    {skillsBox()}
+                </div>
             </div>
         </section>
     )

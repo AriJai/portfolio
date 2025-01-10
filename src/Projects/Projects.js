@@ -14,7 +14,13 @@ const Projects = () => {
         <div className={styles.highlightContainer}>
             {
                 highLight.highlightImg ?
-                    <img className={styles.highlightThumbnail} src={highLight.highlightImg} onClick={() => handleClick(highLight.link)} alt={highLight.highlightImg_aria}></img> :
+                    <img 
+                        className={styles.highlightThumbnail}
+                        src={highLight.highlightImg}
+                        onClick={() => handleClick(highLight.link)}
+                        alt={highLight.highlightImg_aria}
+                        loading="lazy">
+                    </img> :
                     <div className={styles.highlightThumbnail}></div>
             }
             <h3 className={styles.highlightTitle}>{highLight.name}</h3>
@@ -27,7 +33,7 @@ const Projects = () => {
     (
         <div className={styles.projectListGridContainer} key={`project_${key}`} onClick={() => setHighLight(ProjectApps[key])}>
             <img className={styles.projectListThumbnail} src={project.img} alt={project.img_aria}></img>
-            <h3 className={styles.projectName}>{project.name}</h3>
+            <h5 className={styles.projectName}>{project.name}</h5>
         </div>
     )
 
@@ -38,17 +44,19 @@ const Projects = () => {
     )
 
     return (
-        <section className={styles.mainContainer} id="projects">
-            <h2 className={styles.title}>Projects</h2>
-            <div className={styles.content}>
+        <section className={`wrap ${styles.mainContainer}`} id="projects">
+            <div className={`content ${styles.projectContainer}`}>
+                <h2 className={`title `}>Projects</h2>
                 <div className={styles.projectListContainer}>
                     {
-                        projectList()
+                        projectHighLight(highLight)
                     }
+                    <div class={`${styles.projectListItemContainer}`}>
+                        {
+                            projectList()
+                        }
+                    </div>
                 </div>
-                {
-                    projectHighLight(highLight)
-                }
             </div>
         </section>
     )

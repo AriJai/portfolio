@@ -4,53 +4,59 @@
 
 .mainContainer {
     position: relative;
-    margin-top: 75px;
-    height: max(80vh, 900px);
     z-index: 8;
-    display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    flex-direction: column;
+    padding: 24px 0px;
+}
+
+.heroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    text-align: center;
 }
 
 .headlineContainer {
-    grid-area: 1 / 1 / 2 / 3;
-    max-width: 100vw;
-    text-align: right;
-    align-self: center;
-    margin-right: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .headline {
-    line-height: 100px;
-    font-size: clamp(32px, 7vw, 100px);
+    opacity: 1;
     animation: pop 1s ease-out;
 }
 
 .subHeadline {
     opacity: 0;
-    line-height: 40px;
-    font-size: clamp(20px, 2.5vw, 40px);
     animation: pop 1s ease-out 0.8s forwards;
 }
 
 .heroMessage {
     opacity: 0;
-    line-height: 24px;
-    font-size: clamp(12px, 2vw, 24px);
     animation: pop 1s ease-out 1.5s forwards;
+}
+
+.imageAndIconsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
 }
 
 .heroPhoto {
     background-position: center;
     background: var(--black);
     clip-path: circle();
-    place-self: center;
-    margin: 0 auto;
     z-index: 1;
-    width: 30vw;
-    height: 30vw;
+    width: 250px;
+    height: 250px;
     max-width: 600px;
     max-height: 600px;
-    grid-area: 1 / 1 / 4 / 2;
     opacity: 0;
     animation: pop 0.5s ease-out 2s forwards;
 }
@@ -98,37 +104,30 @@
     display: inline;
 }
 
-@media only screen and (min-width: 0px) and (max-width: 700px) {
+@media (max-width: 768px) {
+
+    .headlineContainer {
+        align-items: center;
+    }
 
     .headlineContainer{
-        grid-area: 1 / 1 / 2 / 3;
-        text-align: center;
         margin-right: unset;
     }
 
+    .imageAndIconsContainer {
+        flex-direction: column;
+    }
+
     .headline {
-        line-height: 48px;
-        text-align: unset;
-    }
-    
-    .subHeadline {
-        line-height: 24px;
-        text-align: unset;
-    }
-    
-    .heroMessage {
-        top: unset;
-        line-height: 16px;
+        margin: 0 auto;
     }
 
     .heroPhoto {
-        grid-area: 2 / 1 / 3 / 3;
-        width: 60vw;
-        height: 60vw;
+        width: 250px;
+        height: 250px;
     }
 
     .socialMediaContainer {
-        grid-area: 3 / 1 / 4 / 3;
         align-items: center;
     }
 
@@ -137,31 +136,13 @@
     }
 }
 
-@media only screen and (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 768px) {
 
-    .mainContainer {
-        margin-top: 56px;
-    }
 
-    .headline {
-        align-self: end;
-        line-height: 72px;
-        margin-right: unset;
-    }
-    
-    .subHeadline{
-        line-height: 36px;
-    }
-
-    .heroMessage {
-        line-height: 20px;
-        text-align: right;
-    }
 
     .heroPhoto {
-        grid-area: 2 / 1 / 3 / 3;
-        width: 40vw;
-        height: 40vw;
+        width: 400px;
+        height: 400px;
     }
 
     .socialMediaContainer {
@@ -175,6 +156,13 @@
 
 }
 
+@media (min-width: 1024px) {
+
+}
+
+@media (min-width: 1500px ) {
+
+}
 
 @keyframes fadeIn {
     from {
