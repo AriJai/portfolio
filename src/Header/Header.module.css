@@ -15,41 +15,68 @@
     box-shadow: 0px 4px 4px var(--black);
 }
 
+.container {
+    position: sticky;
+    top: 0px;
+    height: 75px;
+    z-index: 10;
+    background: var(--primary);
+    color: var(--background-dark);
+    transition: top 0.1s, color 1s, background 1s;
+}
+
+.headerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigationSection {
+    min-width: 300px;
+}
+
 [data-theme='dark'] .mainContainer {
     background: var(--background-light);
     color: var(--primary);
 }
 
+[data-theme='dark'] .container {
+    background: var(--background-light);
+    color: var(--primary);
+}
+
 .fullName {
-    display: grid;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     margin-left: 40px;
-    grid-template: 1fr 1fr / auto;
-    grid-area: 1 / 2 / 2 / 3;
     max-height: 100%;
     justify-items: start;
     align-content: center;
+    overflow: hidden;
 }
 
 
 .nameF {
-    grid-area: 1 / 1 / 2 / 2;
     width: fit-content;
+    font-weight: bold;
     font-size: clamp(20px, 20px, 24px);
 }
 
 .nameL {
-    grid-area: 2 / 1 / 2 / 2;
     width: fit-content;
+    font-weight: bold;
     font-size: clamp(20px, 20px, 24px);
 }
 
 .hamburger {
     display: none;
     background: var(--black-darkest);
+    flex-shrink: 0;
     width: 30px;
     height: 30px;
     transition: all 1s linear;
-
+    cursor: pointer;
 }
 
 .lineTop, .lineMiddle, .lineBottom {
@@ -124,17 +151,12 @@
     }
 }
 
-.navigationSection {
-    grid-area: 1 / 4 / 2 / 5;
-}
-
 .navigationUnorderedList {
-    display: grid;
-    grid-template: 100% / auto auto auto;
-    max-height: 100%;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
-    list-style-type: none;
+    gap: 24px;
+    max-height: 100%;list-style-type: none;
     font-size: clamp(20px, 20px, 24px);
 }
 
@@ -150,18 +172,6 @@
 .navigationListItemSkills:hover,
 .navigationListItemAbout:hover {
     transform: scale(1.2, 1.2);
-}
-
-.navigationListItemProjects {
-    grid-area: 1 / 1 / 2 / 2; 
-}
-
-.navigationListItemSkills {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-.navigationListItemAbout {
-    grid-area: 1 / 3 / 2 / 4;
 }
 
 li::after {
@@ -195,7 +205,6 @@ li:hover::after {
 }
 
 .iconWrapper {
-    grid-area: 1 / 1 / 2 / 2;
     justify-self: center;
     opacity: 1;
     clip-path: circle();
@@ -222,54 +231,34 @@ li:hover::after {
     animation: rotateStart 0.2s linear forwards;
 }
 
-@media only screen and (min-width: 0px) and (max-width: 700px) {
+/* Media Queries */
+
+@media (max-width: 768px) {
     .mainContainer {
         grid-template: 75px / 1fr 2fr 0.5fr 1fr;
         box-shadow: unset;
     }
 
-    .fullName {
-        grid-area: 1 / 2 / 2 / 3;
-    }
-
     .hamburger {
         display: block;
-        grid-area: 1 / 4 / 2 / 5;
         z-index: 4;
-        justify-self: center;
         border: 1px solid var(--white);
     }
 
     .navigationSection {
-        grid-area: 1 / 3 / 2 / 5;
-        position: relative;
+        position: fixed;
         display: grid;
         background-color: var(--primary-dark);
-        width: 100%;
+        width: 100vw;
         top: -350px;
-        justify-self: end;
         height: 350px;
         z-index: 3;
         place-items: center;
-        border-radius: 0px 0px 0px 20px;
         transition: all 0.5s ease-out;
 
         .navigationUnorderedList {
-            grid-template: 1fr 1fr 1fr / auto;
-            row-gap: 10px;
-            justify-items: center;
-
-            .navigationListItemProjects {
-                grid-area: 1 / 1 / 2 / 2;
-            }
-
-            .navigationListItemSkills {
-                grid-area: 2 / 1 / 3 / 2;
-            }
-
-            .navigationListItemAbout {
-                grid-area: 3 / 1 / 4 / 2;
-            }
+            justify-content: center;
+            flex-direction: column;
         }
     }
 
@@ -278,21 +267,19 @@ li:hover::after {
     }
 
     .navigationForMobile {
-        top: 135px;
+        top: 0px;
     }
 
 }
 
-@media only screen and (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 768px) {
     .mainContainer {
         grid-template: 56px / 0.25fr 1.5fr 2.5fr 0.25fr;
     }
-
-    .navigationSection {
-        grid-area: 1 / 3 / 2 / 4;
-    }
 }
 
+
+/* KeyFrames */
 
 @keyframes fade {
     from {
@@ -310,16 +297,16 @@ li:hover::after {
     }
 
     to {
-        transform: rotate(180deg)
+        transform: rotate(-180deg)
     }
 }
 
 @keyframes rotateEnd {
     from {
-        transform: rotate(180deg)
+        transform: rotate(-180deg)
     }
 
     to {
-        transform: rotate(360deg)
+        transform: rotate(-360deg)
     }
 }

@@ -11,28 +11,38 @@
     background-image: linear-gradient(var(--background-light) 10%,var(--primary));
 }
 
-.mainContainer > p {
-    margin: 0px 5%;
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    gap: 24px;
+    padding: 24px 0px;
+}
+
+.footerContainer > p {
+    flex-grow: 1;
 }
 
 .scrollToTopButton {
-    position:absolute;
-    bottom: 50px;
-    padding: 0px;
-    margin: 0px;
+    position:relative;
     border: 1px solid var(--black);
     height: 60px;
     width: 60px;
     border-radius: 30px;
     overflow: hidden;
     background: var(--secondary);
-    left: calc(50vw - 30px);
     transition: all 0.1s linear;
 }
 
 .scrollToTopButton:hover {
     height: 120px;
     cursor: pointer;
+}
+
+.buttonContainer {
+    height: 124px;
 }
 
 .scrollToTopButton:hover::before {

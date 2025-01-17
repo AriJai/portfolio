@@ -1,16 +1,16 @@
 .mainContainer {
     min-height: 300px;
-    padding-bottom: 10px;
+    padding: 24px 0px;
     scroll-margin-top: 75px;
     transition: min-height 0.5s ease-in-out;
 }
 
-.title {
-    font-size: 100px;
-    line-height: 100px;
-    opacity: 50%;
-    font-weight: lighter;
-    padding-right: 12px;
+.aboutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .me {
@@ -27,8 +27,16 @@
     border-radius: 40px;
     background: var(--secondary);
     font-size: clamp(20px, 20px, 24px);
-    transition: all 0.5s linear;
+    transition: all 0.5s linear, background 0.3s ease;
     cursor: pointer;
+}
+
+.expandButton:hover {
+    background: var(--secondary-dark);
+}
+
+.expandButton:active {
+    background: var(--secondary-darkest);
 }
 
 .icon {
@@ -61,29 +69,15 @@
     opacity: 0;
 }
 
-@media only screen and (min-width: 0px) and (max-width: 700px) {
-    .mainContainer {
-        border-radius: 20px;
-        margin: 5vw 1vw;
-    }
-
-    .title {
-        font-size: 52px;
-        line-height: 52px;
-    }
-
+@media (max-width: 700px) {
     .me {
         font-size: 16px;
         padding: 10px;
     }
 }
 
-@media only screen and (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 768px) {
     
-    .title {
-        font-size: 72px;
-        line-height: 72px;
-    }
 }
 
 @keyframes moving {

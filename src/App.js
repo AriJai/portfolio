@@ -11,16 +11,18 @@ function App() {
 
   useEffect(() => {
     //Format webpage to scroll to top on reload or entering site
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className={`App`}>
       <Header />
-      <Hero />
-      <Projects />
-      <Skills />
-      <About />
+      <main style={{flexDirection: "column"}}>
+        <Hero />
+        <Projects />
+        <Skills />
+        <About />
+      </main>
       <Footer />
     </div>
   );
