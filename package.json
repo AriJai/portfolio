@@ -1,7 +1,7 @@
 {
   "name": "myportfolioapp",
   "version": "0.1.0",
-  "homepage": "https://arijai.github.io/myportfolioapp",
+  "homepage": "https://arijai.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.2",
