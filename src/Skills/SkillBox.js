@@ -1,24 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './Skills.module.css';
+import { brandColors } from '../assets/icons';
 
 const SkillBox = ({ skill }) => {
     const [rotation, setRotation] = useState([]);
-    const [color, setColor] = useState("");
-    const [isMove, setIsMove] = useState(false);
+    const [color, setColor] = useState("white");
     const divRef = useRef(null);
 
     const boxSize = 60;
 
-
     const mouseEnter = () => {
-        setColor(`rgb(${Math.random() * 256},${Math.random() * 256},${Math.random() * 256})`);
-        setIsMove(true);
+        setColor(brandColors[`${skill.name}Icon`] != '#000000' ? brandColors[`${skill.name}Icon`] : '#b4b4b4');
     };
 
     const mouseLeave = () => {
-        setColor(`var(--background-dark)`);
+        setColor(`white`);
         setRotation('unset');
-        setIsMove(false);
     };
 
     const mouseSlide = (event) => {
@@ -46,14 +43,12 @@ const SkillBox = ({ skill }) => {
             onMouseLeave={mouseLeave}
             onMouseMove={mouseSlide}
         >
-            <div
-
-                className={styles.box}
-                style={{ transform: rotation, color: color }}
-            >
-                <div id="box" className={`${styles.boxFace} ${styles.frontSide}`}
-
-                >{skill}</div>
+            <div className={styles.box} style={{ transform: rotation}} >
+                <div id="box" className={`${styles.boxFace} ${styles.frontSide}`}>
+                    {React.cloneElement(skill.icon, {
+                        style: { fill: color, width: 40, height: 40}, 
+                    })}
+                </div>
                 <div className={`${styles.boxFace} ${styles.backSide}`}></div>
                 <div className={`${styles.boxFace} ${styles.leftSide}`}></div>
                 <div className={`${styles.boxFace} ${styles.rightSide}`}></div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import { ArrowUpIcon, HorizontalLineIcon } from '../assets/icons';
 
 const Footer = () =>
 (
@@ -11,12 +12,12 @@ const Footer = () =>
             <div class={`${styles.buttonContainer}`}>
                 <button onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })} className={styles.scrollToTopButton} aria-label="Back to top?">
                     <div className={styles.icons}>
-                        <svg viewBox="0 0 24 24" className={styles.upArrowIcon}>
-                            <path d="M18.427,4.911,14.508.992a3.583,3.583,0,0,0-4.95,0L5.639,4.911A1.5,1.5,0,0,0,7.76,7.032l2.78-2.78.023,18.25a1.5,1.5,0,0,0,1.5,1.5h0a1.5,1.5,0,0,0,1.5-1.5L13.54,4.266l2.766,2.766a1.5,1.5,0,1,0,2.121-2.121Z" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" className={styles.horizontalLineIcon}>
-                            <path d="M23,13H1c-.55,0-1-.45-1-1s.45-1,1-1H23c.55,0,1,.45,1,1s-.45,1-1,1Z" />
-                        </svg>
+                        <div className={styles.upArrowIcon}>
+                            <ArrowUpIcon />
+                        </div>
+                        <div className={styles.horizontalLineIcon}>
+                            <HorizontalLineIcon />
+                        </div>
                     </div>
                 </button>
             </div>
