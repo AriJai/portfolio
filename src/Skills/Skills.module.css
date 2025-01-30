@@ -56,56 +56,80 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
 }
 
 .box {
-    width: 120px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     position: relative;
     transform-style: preserve-3d;
     perspective: 2000px;
     perspective-origin: 50%;
     transition: transform 0.2s linear;
     color: var(--background-light);
-
     --main-bg-color: var(--black-darkest);
     --side-bg-color: var(--secondary);
 
 }
+
 [data-theme='dark'] .box {
     color: var(--background-dark);
 }
+
 .boxFace {
     position: absolute;
 }
-.frontSide { transform: rotateY(0deg) translateZ(20px);}
-.backSide { transform: rotateY(180deg) translateZ(20px);}
-.frontSide,.backSide {
-    width: 120px;
-    height: 80px;
-    opacity: 0.6;
-    font-size: clamp(16px, 1.5vw, 24px);
-    text-align: center;
-    vertical-align: middle;
-    line-height: 60px;
-    border: 1px solid var(--black);
-    background: var(--main-bg-color);
+
+.frontSide {
+    transform: rotateY(0deg) translateZ(10px);
 }
-.leftSide{ transform: rotateY(-90deg) translateZ( 60px ); }
-.rightSide{ transform: rotateY(90deg) translateZ( 60px ); }
-.leftSide, .rightSide {
-    width: 40px;
-    height: 80px;
+
+.backSide {
+    opacity: 0.8;
+    background: var(--main-bg-color);
+    transform: rotateY(180deg) translateZ(10px);
+}
+
+.frontSide,
+.backSide {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    font-size: clamp(4px, 10px, 12px);
+    border: 1px solid var(--black);
+    background: rbga(0,0,0,0.1);
+}
+
+.leftSide {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.rightSide {
+    transform: rotateY(90deg) translateZ(0px);
+}
+
+.leftSide,
+.rightSide {
+    width: 20px;
+    height: 50px;
     left: 40px;
     border: 1px solid var(--black);
     background: var(--side-bg-color);
 }
-.topSide{ transform: rotateX( 90deg) translateZ(40px); }
-.bottomSide { transform: rotateX( -90deg) translateZ(40px); }
-.topSide, .bottomSide {
-    width: 120px;
-    height: 40px;
+
+.topSide {
+    transform: rotateX(90deg) translateZ(30px);
+}
+
+.bottomSide {
+    transform: rotateX(-90deg) translateZ(20px);
+}
+
+.topSide,
+.bottomSide {
+    width: 50px;
+    height: 20px;
     top: 20px;
     border: 1px solid var(--black);
     background: var(--side-bg-color);
@@ -117,11 +141,11 @@
     .mainContainer {
         margin: 5vh 1vw;
     }
-    
+
     .content {
         padding: 1vh 10vw;
     }
-    
+
     .frame {
         padding: 10px 15px;
         font-size: 20px;
@@ -129,9 +153,7 @@
 
 }
 
-@media (min-width: 768px) {
-
-}
+@media (min-width: 768px) {}
 
 @media (min-width: 1024px) {}
 
