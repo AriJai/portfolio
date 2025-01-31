@@ -35,8 +35,16 @@
     background: var(--secondary-dark);
 }
 
+[data-theme='dark'] .expandButton:hover {
+    background: var(--secondary-light);
+}
+
 .expandButton:active {
     background: var(--secondary-darkest);
+}
+
+[data-theme='dark'] .expandButton:active {
+    background: var(--secondary-lightest);
 }
 
 .icon {

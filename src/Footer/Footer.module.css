@@ -39,6 +39,18 @@
 .scrollToTopButton:hover {
     height: 120px;
     cursor: pointer;
+    background: var(--secondary-dark);
+}
+
+[data-theme='dark'] .scrollToTopButton:hover {
+    background: var(--secondary-light)
+}
+
+.scrollToTopButton:active {
+    background: var(--secondary-darkest);
+}
+[data-theme='dark'] .scrollToTopButton:active {
+    background: var(--secondary-lightest);
 }
 
 .buttonContainer {

@@ -17,7 +17,7 @@ function App() {
   return (
     <div className={`App`}>
       <Header />
-      <main style={{flexDirection: "column"}}>
+      <main >
         <Hero />
         <Projects />
         <Skills />

@@ -31,25 +31,6 @@
     padding: 20px;
 }
 
-.content h3 {
-    color: var(--black-darkest);
-}
-
-.frame {
-    border: 2px solid var(--black-darkest);
-    color: var(--background-dark);
-    border-radius: 20px;
-    padding: 20px 32px;
-    text-align: center;
-    font-size: clamp(16px, 20px, 24px);
-    transition: all 0.2s linear;
-}
-
-[data-theme='dark'] .frame {
-    color: var(--background-dark);
-    border: 2px solid var(--background-dark);
-}
-
 .sections {
     display: flex;
     flex-wrap: wrap;
@@ -100,7 +81,6 @@
     place-items: center;
     font-size: clamp(4px, 10px, 12px);
     border: 1px solid var(--black);
-    background: rbga(0,0,0,0.1);
 }
 
 .leftSide {
