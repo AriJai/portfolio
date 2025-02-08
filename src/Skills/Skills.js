@@ -38,7 +38,7 @@ const Skills = () => {
 
   const renderSkills = (skills, title) => (
     <>
-      <h3>{title}</h3>
+      <h4>{title}</h4>
       <div className={styles.sections}>
         {skills.map((skill, i) => (
           <SkillBox key={`box_${i}`} skill={skill} />

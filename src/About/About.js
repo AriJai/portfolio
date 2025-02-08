@@ -11,9 +11,12 @@ const About = () => {
             <div className={`content ${styles.aboutContainer}`} >
                 <h2 className={`title `}>About</h2>
                 <div id="me" className={styles.me}>
-                    <p>I develop websites and web applications using JSX, HTML, and CSS.</p>
-                    <p>This is a journey to learn of the ever-changing landscape of the Internet. I&apos;m excited to see what else is out there.</p>
-                    <p>When I&apos;m away from the computer, you can probably find me outside in search of more coffee.</p>
+                    <p>Hello there! It's nice to meet you&#44; I am Arian Jaihooni &#40; pronounced &#8220;Ah-rhi-on Jay-who-knee&#8221; &#41;&#44; and thank you for coming over to check out my portfolio!</p>
+                    <p>I develop websites and web applications using JavaScript&#44; HTML&#44; and CSS&#46;</p>
+                    <p></p>
+                    <p>This is a journey to learn of the ever-changing landscape of the Internet&#46; I&apos;m excited to see what else is out there&#46;</p>
+                    <p></p>
+                    <p>When I&apos;m away from the computer&#44; you can probably find me outside in search of more coffee&#46;</p>
                     <button className={styles.expandButton} onClick={handleExpand} >
                         {isExpanded ?
                             <div className={styles.icon} aria-label="Read less?">
@@ -21,15 +24,18 @@ const About = () => {
                             </div>
                             :
                             <div className={styles.icon} aria-label="Read more?">
-                                <AngleDownIcon/>
+                                <AngleDownIcon />
                             </div>
                         }
                     </button>
-                    <div className={`${styles.expanded} ${isExpanded ? styles.expandedShow : styles.expandedHide}`} id="expanded">
-                        <p>Based in Los Angeles, I&apos;ve begun a career switch into programming after college in 2020.</p>
-                        <p>Dedicated to my craft, I seek to build products that can stand tall and make a statement.</p>
-                        <p>I&apos;m always willing to learn something new!</p>
-                        <p>I enjoy the beach, the movie theater, and pizza.</p>
+                    <div className={`${styles.expanded} ${isExpanded ? "" : styles.expandedShow}`} id="expanded">
+                        <p>
+                            Based in Los Angeles&#44; I&apos;ve begun a career switch into programming after college in 2020&#46;<br></br>
+                            Since then&#44; I have taken the time to learn about the many facets behind the web development process&#46;<br></br>
+                            Dedicated to my craft&#44; I seek to build products that can stand tall and make a statement&#46;<br></br>
+                            I&apos;m always going back to documentation, while working on projects and seeking new technologies&#46;<br></br>
+                            I enjoy the beach&#44; going to the movies&#44; and pizza&#46;<br></br>
+                        </p>
                     </div>
                 </div>
             </div>
