@@ -56,6 +56,10 @@
     animation: moving 1s ease-out infinite;
 }
 
+.icon svg {
+    top: -4px;
+}
+
 [data-theme='dark'] .icon {
     fill: var(--background-light);
 }
@@ -68,7 +72,7 @@
     margin: 0px 5%;
     transform: scaleY(0);
     transform-origin: top;
-    transition: all 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, grid-template-rows 0.5s ease-in-out;
 }
 
 .expanded p {

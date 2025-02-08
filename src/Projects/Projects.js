@@ -14,13 +14,15 @@ const Projects = () => {
         <div className={styles.highlightContainer}>
             {
                 highLight.highlightImg ?
-                    <img 
-                        className={styles.highlightThumbnail}
-                        src={highLight.highlightImg}
-                        onClick={() => handleClick(highLight.link)}
-                        alt={highLight.highlightImg_aria}
-                        loading="lazy">
-                    </img> :
+                    <div className={styles.highlightThumbnailContainer}>
+                        <img
+                            className={styles.highlightThumbnail}
+                            src={highLight.highlightImg}
+                            onClick={() => handleClick(highLight.link)}
+                            alt={highLight.highlightImg_aria}
+                            loading="lazy">
+                        </img>
+                    </div> :
                     <div className={styles.highlightThumbnail}></div>
             }
             <h3 className={styles.highlightTitle}>{highLight.name}</h3>
@@ -32,7 +34,9 @@ const Projects = () => {
     const projectFrame = (project, key) =>
     (
         <div className={styles.projectListGridContainer} key={`project_${key}`} onClick={() => setHighLight(ProjectApps[key])}>
-            <img className={styles.projectListThumbnail} src={project.img} alt={project.img_aria}></img>
+            <div className={styles.projectListThumbnailContainer}>
+                <img className={styles.projectListThumbnail} src={project.img} alt={project.img_aria}></img>
+            </div>
             <h5 className={styles.projectName}>{project.name}</h5>
         </div>
     )
