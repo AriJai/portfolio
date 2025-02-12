@@ -28,7 +28,7 @@ const About = () => {
                             </div>
                         }
                     </button>
-                    <div className={`${styles.expanded} ${isExpanded ? "" : styles.expandedShow}`} id="expanded">
+                    <div className={`${styles.expanded} ${isExpanded ? styles.expandedShow : ""}`} id="expanded">
                         <p>
                             Based in Los Angeles&#44; I&apos;ve begun a career switch into programming after college in 2020&#46;<br></br>
                             Since then&#44; I have taken the time to learn about the many facets behind the web development process&#46;<br></br>
