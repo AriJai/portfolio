@@ -33,11 +33,15 @@ const Projects = () => {
 
     const projectFrame = (project, key) =>
     (
-        <div className={styles.projectListGridContainer} key={`project_${key}`} onClick={() => setHighLight(ProjectApps[key])}>
-            <div className={styles.projectListThumbnailContainer}>
-                <img className={styles.projectListThumbnail} src={project.img} alt={project.img_aria}></img>
+        <div className={styles.projectFrameContainer} key={`project_${key}`} onClick={() => setHighLight(ProjectApps[key])}>
+            <div className={styles.projectFrameThumbnailContainer}>
+                {
+                    project.img ? 
+                    <img className={styles.projectFrameThumbnail} src={project.img} alt={project.img_aria}></img>:
+                    <div className={styles.projectFrameThumbnail}></div>
+                }
             </div>
-            <h5 className={styles.projectName}>{project.name}</h5>
+            <h5 className={styles.projectFrameTitle}>{project.name}</h5>
         </div>
     )
 
