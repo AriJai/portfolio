@@ -5,14 +5,9 @@
     align-items: center;
     flex-direction: column;
     z-index: 8;
-    margin: 24px 0px;
     scroll-margin-top: 75px;
     background: var(--primary);
     transition: background 1s linear;
-}
-
-[data-theme='dark'] .mainContainer {
-    color: var(--background-dark);
 }
 
 .skillsContainer {
@@ -119,9 +114,6 @@
 
 
 @media (max-width: 768px) {
-    .mainContainer {
-        margin: 5vh 1vw;
-    }
 
     .content {
         padding: 1vh 10vw;

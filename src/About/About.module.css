@@ -1,6 +1,5 @@
 .mainContainer {
     min-height: 300px;
-    padding: 24px 0px;
     scroll-margin-top: 75px;
     transition: min-height 0.5s ease-in-out;
 }
