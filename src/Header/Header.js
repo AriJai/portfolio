@@ -57,13 +57,13 @@ const Header = () => {
 
                     {
                         isLightmode ?
-                            <div onClick={handleVisibility} className={styles.iconWrapper}>
+                            <button onClick={handleVisibility} className={styles.iconWrapper}>
                                 <SunIcon className={styles.themeToggleIcon} aria-label="Light mode" id="sun" />
-                            </div>
+                            </button>
                             :
-                            <div onClick={handleVisibility} className={styles.iconWrapper}>
+                            <button onClick={handleVisibility} className={styles.iconWrapper}>
                                 <MoonIcon className={styles.themeToggleIcon} aria-label="Dark mode" id="moon" />
-                            </div>
+                            </button>
                     }
 
                     <h1 className={styles.fullName}>

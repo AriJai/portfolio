@@ -23,7 +23,11 @@ const Projects = () => {
                             loading="lazy">
                         </img>
                     </div> :
-                    <div className={styles.highlightThumbnail}></div>
+                    <div className={styles.highlightThumbnailContainer}>    
+                        <div className={styles.highlightThumbnail}>
+                            <h3 className={styles.highlightTitle}>{highLight.name}</h3>
+                        </div>
+                    </div>
             }
             <h3 className={styles.highlightTitle}>{highLight.name}</h3>
             <p className={styles.highlightDescription}>{highLight.desc}</p>

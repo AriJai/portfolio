@@ -104,6 +104,9 @@
 }
 
 .highlightThumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
     width: 100%;
     aspect-ratio: 16/ 9;
@@ -112,10 +115,20 @@
     transition: transform 0.3s ease;
 }
 
+.highlightThumbnail > h3 {
+    transform: scale(0);
+     font-size: clamp(20px, 8vw, 100px);
+    color: black;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.highlightThumbnail:active > h3 {
+    transform: scale(1) rotate(720deg);
+}
+
 .highlightTitle {
     justify-self: center;
-    opacity: 0;
-    animation: pop 0.5s ease-out 2s forwards;
 }
 
 .highlightDescription {
@@ -146,10 +159,3 @@
 @media (min-width: 1024px) {}
 
 @media (min-width: 1500px) {}
-
-@keyframes pop {
-    to {
-        scale: 1;
-        opacity: 1;
-    }
-}
