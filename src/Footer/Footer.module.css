@@ -3,7 +3,8 @@
     min-height: calc(100vh - 74px);
     color: var(--white);
     z-index: 11;
-    background: var(--background-dark);
+    background: var(--primary);
+    transition: background 1s;
 }
 
 [data-theme='dark'] .mainContainer {

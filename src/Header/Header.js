@@ -8,14 +8,32 @@ import { MoonIcon, SunIcon } from '../assets/icons';
 const Header = () => {
     const [isHamburgerToggled, setIsHamburgerToggled] = useState(false);
     const [desiredScrollPosition, setDesiredScrollPosition] = useState(0);
-    const [isLightmode, setIsLightmode] = useState(isDaytime())
+    const [isLightmode, setIsLightmode] = useState(isDaytime());
+    const [width, setWidth] = useState(window.innerWidth);
     const dispatch = useDispatch();
     const toggle = useSelector(selectToggle);
 
+    // Set theme to light and dark mode
     useEffect(() => {
         // Update data-theme attribute based on visibility
         document.body.setAttribute('data-theme', toggle.activeLightmode ? 'light' : 'dark');
     }, [toggle.activeLightmode]);
+    // Update checks viewport width size for state
+    useEffect(() => {
+        function handleResize() {
+            setWidth(window.innerWidth);
+        }
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [toggle.activeLightmode]);
+    // toggles the nav bar when we resize viewport from mobile to desktop
+    useEffect(() => {
+        // This runs whenever `width` changes
+        if (isHamburgerToggled == true && width > 768) {
+            toggleHamburger();
+        }
+    }, [width]);
 
     // Sets light mode to dark mode
     const handleVisibility = () => {
@@ -80,6 +98,13 @@ const Header = () => {
 
 
                     <div className={`${styles.navigationSection} ${toggle.activeHamburger ? styles.navigationForMobile : ""}`} id="nav" >
+                        {width < 768 ?
+                            <p className={styles.fullNameNav}>
+                                <span className={styles.nameF}>Arian</span>
+                                <span className={styles.nameL}>Jaihooni</span>
+                            </p>
+                            : ""
+                        }
                         <nav id="header">
                             <ul className={`${styles.navigationUnorderedList}`}>
                                 <li className={styles.navigationListItemProjects}>

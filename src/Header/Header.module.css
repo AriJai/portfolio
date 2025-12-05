@@ -35,11 +35,6 @@
     min-width: 300px;
 }
 
-[data-theme='dark'] .mainContainer {
-    background: var(--background-light);
-    color: var(--primary);
-}
-
 [data-theme='dark'] .container {
     background: var(--background-light);
     color: var(--primary);
@@ -51,8 +46,15 @@
     flex-direction: column;
     margin-left: 40px;
     max-height: 100%;
-    justify-items: start;
-    align-content: center;
+    overflow: hidden;
+}
+
+.fullNameNav {
+    flex-grow: 1;
+    display: flex;
+    max-height: 100%;
+    gap: 4px;
+    align-self: flex-end;
     overflow: hidden;
 }
 
@@ -255,7 +257,7 @@ li:hover::after {
         height: 350px;
         z-index: 3;
         place-items: center;
-        transition: all 0.5s ease-out;
+        transition: top 0.2s ease-out;
 
         .navigationUnorderedList {
             justify-content: center;
