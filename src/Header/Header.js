@@ -73,38 +73,25 @@ const Header = () => {
             <div className={`wrap`}>
                 <div className={`content ${styles.headerContent}`}>
 
-                    {
-                        isLightmode ?
-                            <button onClick={handleVisibility} className={styles.iconWrapper}>
-                                <SunIcon className={styles.themeToggleIcon} aria-label="Light mode" id="sun" />
-                            </button>
-                            :
-                            <button onClick={handleVisibility} className={styles.iconWrapper}>
-                                <MoonIcon className={styles.themeToggleIcon} aria-label="Dark mode" id="moon" />
-                            </button>
-                    }
-
-                    <h1 className={styles.fullName}>
-                        <span className={styles.nameF}>Arian</span>
-                        <span className={styles.nameL}>Jaihooni</span>
-                    </h1>
-
-
-                    <div className={`${styles.hamburger} ${toggle.activeHamburger ? styles.hamburgerIsActive : ""}`} id="ham" onClick={toggleHamburger} >
-                        <div className={styles.lineTop}></div>
-                        <div className={styles.lineMiddle}></div>
-                        <div className={styles.lineBottom}></div>
-                    </div>
-
 
                     <div className={`${styles.navigationSection} ${toggle.activeHamburger ? styles.navigationForMobile : ""}`} id="nav" >
-                        {width < 768 ?
-                            <p className={styles.fullNameNav}>
-                                <span className={styles.nameF}>Arian</span>
-                                <span className={styles.nameL}>Jaihooni</span>
-                            </p>
-                            : ""
+
+                        {
+                            isLightmode ?
+                                <button onClick={handleVisibility} className={styles.iconWrapper}>
+                                    <SunIcon className={styles.themeToggleIcon} aria-label="Light mode" id="sun" />
+                                </button>
+                                :
+                                <button onClick={handleVisibility} className={styles.iconWrapper}>
+                                    <MoonIcon className={styles.themeToggleIcon} aria-label="Dark mode" id="moon" />
+                                </button>
                         }
+
+                        <h1 className={styles.fullName}>
+                            <span className={styles.nameF}>Arian</span>
+                            <span className={styles.nameL}>Jaihooni</span>
+                        </h1>
+
                         <nav id="header">
                             <ul className={`${styles.navigationUnorderedList}`}>
                                 <li className={styles.navigationListItemProjects}>
@@ -118,6 +105,11 @@ const Header = () => {
                                 </li>
                             </ul>
                         </nav>
+                    </div>
+                    <div className={`${styles.hamburger} ${toggle.activeHamburger ? styles.hamburgerIsActive : ""}`} id="ham" onClick={toggleHamburger} >
+                        <div className={styles.lineTop}></div>
+                        <div className={styles.lineMiddle}></div>
+                        <div className={styles.lineBottom}></div>
                     </div>
 
                     <div className={`${toggle.activeHamburger ? styles.hamburgerOverlay : ""}`} onClick={toggleHamburger}></div>

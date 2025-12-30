@@ -88,6 +88,12 @@
     padding: 0;
 }
 
+@media (max-width: 768px) {
+    .mainContainer {
+        min-height: 100vh;
+    }
+}
+
 
 @keyframes moving {
 
