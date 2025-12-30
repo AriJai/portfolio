@@ -112,19 +112,22 @@
     aspect-ratio: 16/ 9;
     border: 1px solid var(--black);
     background: var(--black);
+    overflow: hidden;
     transition: transform 0.3s ease;
 }
 
 .highlightThumbnail > h3 {
     transform: scale(0);
-     font-size: clamp(20px, 8vw, 100px);
+    font-size: clamp(20px, 8vw, 100px);
     color: black;
     user-select: none;
-    transition: transform 0.3s ease;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .highlightThumbnail:active > h3 {
-    transform: scale(1) rotate(720deg);
+    transform: scale(1);
+    opacity: 1;
 }
 
 .highlightTitle {
